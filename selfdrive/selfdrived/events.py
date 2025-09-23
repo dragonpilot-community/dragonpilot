@@ -782,11 +782,8 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
   },
 
   EventName.wrongGear: {
-    ET.PERMANENT: Alert(
-      "請切換到D檔",
-      "",
-      AlertStatus.normal, AlertSize.none,
-      Priority.LOWEST, VisualAlert.none, AudibleAlert.none, .1),
+    ET.SOFT_DISABLE: user_soft_disable_alert("請切換到D檔"),
+    ET.NO_ENTRY: NoEntryAlert("請切換到D檔"),
   },
 
   # This alert is thrown when the calibration angles are outside of the acceptable range.
@@ -813,19 +810,13 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
   },
 
   EventName.doorOpen: {
-    ET.PERMANENT: Alert(
-      "車門未關好",
-      "",
-      AlertStatus.normal, AlertSize.none,
-      Priority.LOWEST, VisualAlert.none, AudibleAlert.none, .1),
+    ET.SOFT_DISABLE: user_soft_disable_alert("車門未關好"),
+    ET.NO_ENTRY: NoEntryAlert("車門未關好"),
   },
 
   EventName.seatbeltNotLatched: {
-    ET.PERMANENT: Alert(
-      "請系好安全帶",
-      "",
-      AlertStatus.normal, AlertSize.none,
-      Priority.LOWEST, VisualAlert.none, AudibleAlert.none, .1),
+    ET.SOFT_DISABLE: user_soft_disable_alert("請係好安全帶"),
+    ET.NO_ENTRY: NoEntryAlert("請係好安全帶"),
   },
 
   EventName.espDisabled: {
