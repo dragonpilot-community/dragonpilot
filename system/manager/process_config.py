@@ -98,7 +98,7 @@ procs = [
   PythonProcess("joystickd", "tools.joystick.joystickd", or_(joystick, notcar)),
   PythonProcess("selfdrived", "selfdrive.selfdrived.selfdrived", only_onroad),
   PythonProcess("card", "selfdrive.car.card", only_onroad),
-  #PythonProcess("deleter", "system.loggerd.deleter", always_run),
+  PythonProcess("deleter", "system.loggerd.deleter", always_run),
   #PythonProcess("dmonitoringd", "selfdrive.monitoring.dmonitoringd", driverview, enabled=(WEBCAM or not PC) and not os.getenv("LITE")),
   PythonProcess("dpmonitoringd", "selfdrive.monitoring.dpmonitoringd", only_onroad, enabled=os.getenv("LITE")),
   PythonProcess("qcomgpsd", "system.qcomgpsd.qcomgpsd", qcomgps, enabled=TICI),
