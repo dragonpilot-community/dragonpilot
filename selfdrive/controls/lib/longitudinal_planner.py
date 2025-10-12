@@ -205,7 +205,12 @@ class LongitudinalPlanner:
     self.j_desired_trajectory = np.interp(CONTROL_N_T_IDX, T_IDXS_MPC[:-1], self.mpc.j_solution)
 
     # Apply ACM post-processing to the acceleration trajectory if active
-    self.a_desired_trajectory = self.acm.update_a_desired_trajectory(self.a_desired_trajectory)
+    if not (self.aem.enabled and self.aem._current_mode == 'blended'):
+        self.a_desired_trajectory = self.acm.update_a_desired_trajectory(self.a_desired_trajectory)
+        output_a_target = self.acm.update_output_a_target(output_a_target)
+    else:
+        # Skip ACM adjustment while AEM blended active
+        self.acm.just_disabled = True    
 
     # TODO counter is only needed because radar is glitchy, remove once radar is gone
     self.fcw = self.mpc.crash_cnt > 2 and not sm['carState'].standstill
@@ -229,10 +234,6 @@ class LongitudinalPlanner:
     else:
       output_a_target = min(output_a_target_mpc, output_a_target_e2e)
       self.output_should_stop = output_should_stop_e2e or output_should_stop_mpc
-
-    # Apply ACM to the final output acceleration target as well
-    output_a_target = self.acm.update_output_a_target(output_a_target)
-
     for idx in range(2):
       accel_clip[idx] = np.clip(accel_clip[idx], self.prev_accel_clip[idx] - 0.05, self.prev_accel_clip[idx] + 0.05)
     self.output_a_target = np.clip(output_a_target, accel_clip[0], accel_clip[1])
