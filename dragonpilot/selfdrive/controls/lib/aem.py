@@ -24,28 +24,28 @@ from cereal import log
 class AEM:
     # --- Configuration Constants ---
     # Speed thresholds (m/s)
-    SPEED_THRESHOLD_HIGHWAY = 22.23  # m/s (approx. 80 kph)
-    SPEED_THRESHOLD_CITY = 15.27     # m/s (approx. 55 kph)
-    SPEED_THRESHOLD_LOW = 5.56       # m/s (approx. 20 kph)
-    SPEED_THRESHOLD_CREEP = 2.23     # m/s (approx. 8 kph)
+    SPEED_THRESHOLD_HIGHWAY = 20.0  # m/s (approx. 80 kph)
+    SPEED_THRESHOLD_CITY = 13.9     # m/s (approx. 55 kph)
+    SPEED_THRESHOLD_LOW = 6.0       # m/s (approx. 20 kph)
+    SPEED_THRESHOLD_CREEP = 2.0     # m/s (approx. 8 kph)
 
     # Lead related thresholds
-    LEAD_TTC_CRITICAL = 1.75        # seconds, time to collision
-    LEAD_TTC_CAUTION = 3.0
-    LEAD_DIST_VERY_CLOSE = 10.0    # meters
-    LEAD_DIST_FAR_HIGHWAY = 85.0   # meters, for considering lead far enough on highway
+    LEAD_TTC_CRITICAL = 1.2        # seconds, time to collision
+    LEAD_TTC_CAUTION = 2.0
+    LEAD_DIST_VERY_CLOSE = 8.0    # meters
+    LEAD_DIST_FAR_HIGHWAY = 90.0   # meters, for considering lead far enough on highway
     LEAD_DIST_DEFAULT_NO_LEAD = 150.0 # Default distance for EMA when no lead
 
-    LEAD_ACCEL_HARD_BRAKE = -3.0   # m/s^2
-    LEAD_ACCEL_MILD_BRAKE = -2.0   # m/s^2
+    LEAD_ACCEL_HARD_BRAKE = -3.5   # m/s^2
+    LEAD_ACCEL_MILD_BRAKE = -2.2   # m/s^2
     LEAD_ACCEL_PULLING_AWAY = 0.5  # m/s^2
 
     # Steering thresholds
-    STEERING_ANGLE_ABS_HIGH_CURVATURE = 45.0  # degrees (EMA value)
+    STEERING_ANGLE_ABS_HIGH_CURVATURE = 40.0  # degrees (EMA value)
 
     # Hysteresis & Timers
-    HYSTERESIS_FRAMES_TO_SWITCH = 10  # Approx 0.5s at 20Hz
-    LEAD_LOST_FRAMES_TO_FALLBACK_BASE = 40 # Approx 2s at 20Hz
+    HYSTERESIS_FRAMES_TO_SWITCH = 4  # Approx 0.5s at 20Hz
+    LEAD_LOST_FRAMES_TO_FALLBACK_BASE = 25 # Approx 2s at 20Hz
 
     # EMA filter time constants (seconds) - THESE ARE DESIGN PARAMETERS
     EMA_TC_V_EGO = 1.0
@@ -56,7 +56,7 @@ class AEM:
     EMA_TC_V_MODEL_ERROR = 1.0
 
     # Model & Planner Related Thresholds
-    MODEL_VEL_ERROR_THRESHOLD = 2.0 # m/s (EMA value)
+    MODEL_VEL_ERROR_THRESHOLD = 1.0 # m/s (EMA value)
     MIN_VISION_LEAD_PROB_ACTION = 0.5 # Min modelProb for acting on vision-only leads
 
     # Other
@@ -269,10 +269,12 @@ class AEM:
                 needs_blended_assist, reason = True, f"Model predicts stop (curr={raw_model_stop_intention_current_cycle}, prev={model_predicts_stop_prev})"
 
             # Scenario 5: High Curvature/Urban Turns (Curvature input removed)
-            if not needs_blended_assist and \
-               steering_angle_abs > AEM.STEERING_ANGLE_ABS_HIGH_CURVATURE and \
-               v_ego < AEM.SPEED_THRESHOLD_CITY:
-                needs_blended_assist, reason = True, f"High steering angle ({steering_angle_abs:.1f})"
+            # 改良版：低速或中速轉彎才觸發，高速公路彎道不會誤觸
+            if not needs_blended_assist:
+             # 低速（<50km/h）或中速（<70km/h且轉角大）才啟動
+               if (steering_angle_abs > AEM.STEERING_ANGLE_ABS_HIGH_CURVATURE and v_ego < AEM.SPEED_THRESHOLD_CITY) or \
+                  (steering_angle_abs > (AEM.STEERING_ANGLE_ABS_HIGH_CURVATURE * 1.1) and v_ego < (AEM.SPEED_THRESHOLD_HIGHWAY * 0.9)):
+                   needs_blended_assist, reason = True, f"Curved road detected ({steering_angle_abs:.1f}°, v={v_ego:.1f})"
 
             # Scenario 6: Planner Already Braking (Prev Cycle)
             if not needs_blended_assist and \
@@ -321,6 +323,17 @@ class AEM:
 
             if not blended_condition_still_active:
                 safe_to_return_to_acc = False
+                # 如果車速超過市區閾值且TTC>2s則立即回ACC
+                if v_ego > AEM.SPEED_THRESHOLD_CITY and ttc > 2.0:
+                    safe_to_return_to_acc, reason = True, "High speed, safe to return"
+                # --- [AEM高速回復優化] ---
+                # 若在高速公路上 (超過HIGHWAY速度)，不論其他條件，快速回ACC
+                if v_ego > AEM.SPEED_THRESHOLD_HIGHWAY:
+                    safe_to_return_to_acc, reason = True, "Highway condition - quick return to ACC"
+
+                # 若轉彎已結束 (轉角變小) 也立即回ACC
+                elif steering_angle_abs < (AEM.STEERING_ANGLE_ABS_HIGH_CURVATURE * 0.6) and v_ego > AEM.SPEED_THRESHOLD_LOW:
+                    safe_to_return_to_acc, reason = True, "Curve ended - resume ACC"
                 reason = ""
                 # Scenario 10: Highway Cruising - Excellent Conditions
                 if v_ego > AEM.SPEED_THRESHOLD_HIGHWAY and \
