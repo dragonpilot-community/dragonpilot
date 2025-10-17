@@ -110,6 +110,11 @@ class CarInterface(CarInterfaceBase):
           ret.lateralTuning.pid.kf = 0.00004
           break
 
+      # Some 2019+ RAV4 TSS2 cars have a different fwVersion. Since we don't know the fwVersion, we force the modified tuning to be used.
+      ret.lateralTuning.pid.kpV = [0.15]
+      ret.lateralTuning.pid.kiV = [0.05]
+      ret.lateralTuning.pid.kf = 0.00004
+
     elif candidate in (CAR.TOYOTA_CHR, CAR.TOYOTA_CAMRY, CAR.TOYOTA_SIENNA, CAR.LEXUS_CTH, CAR.LEXUS_NX):
       # TODO: Some of these platforms are not advertised to have full range ACC, are they similar to SNG_WITHOUT_DSU cars?
       stop_and_go = True
