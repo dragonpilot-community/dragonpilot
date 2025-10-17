@@ -61,7 +61,8 @@ class ACM:
       self._has_lead = False
 
     self.active = not user_ctrl_lon and not self._has_lead and self._is_speed_over_cruise and (self._is_downhill if self.downhill_only else True)
-
+  # 將 ACM 狀態傳遞到 controlsState
+    CP.acmActive = self.active
     self.just_disabled = self._active_prev and not self.active
     self._active_prev = self.active
 
