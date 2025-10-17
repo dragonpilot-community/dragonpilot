@@ -115,7 +115,6 @@ class HudRenderer(Widget):
       self._draw_set_speed(rect)
 
     self._draw_current_speed(rect)
-    self._draw_acm_status(rect)
 
     button_x = rect.x + rect.width - UI_CONFIG.border_size - UI_CONFIG.button_size
     button_y = rect.y + UI_CONFIG.border_size
@@ -178,23 +177,7 @@ class HudRenderer(Widget):
     unit_text_size = measure_text_cached(self._font_medium, unit_text, FONT_SIZES.speed_unit)
     unit_pos = rl.Vector2(rect.x + rect.width / 2 - unit_text_size.x / 2, 290 - unit_text_size.y / 2)
     rl.draw_text_ex(self._font_medium, unit_text, unit_pos, FONT_SIZES.speed_unit, 0, COLORS.white_translucent)
-  def _draw_acm_status(self, rect: rl.Rectangle) -> None:
-    sm = ui_state.sm
-    acm_active = False
-    try:
-      acm_active = sm['controlsState'].acmActive
-    except Exception:
-      pass
 
-    if acm_active:
-      text = "ACM作動中"
-      text_size = measure_text_cached(self._font_medium, text, 48)
-      pos_x = rect.x + rect.width / 2 - text_size.x / 2
-      pos_y = 360  # 顯示在速度下方
-
-      # 半透明背景框
-      rl.draw_rectangle_rounded(
-        rl.Rectangle(pos_x - 10, pos_y - 10, text_size.x + 20, text_size.y + 20),
         0.2, 10, rl.Color(0, 0, 0, 150)
       )
 
