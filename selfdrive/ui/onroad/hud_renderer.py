@@ -177,9 +177,3 @@ class HudRenderer(Widget):
     unit_text_size = measure_text_cached(self._font_medium, unit_text, FONT_SIZES.speed_unit)
     unit_pos = rl.Vector2(rect.x + rect.width / 2 - unit_text_size.x / 2, 290 - unit_text_size.y / 2)
     rl.draw_text_ex(self._font_medium, unit_text, unit_pos, FONT_SIZES.speed_unit, 0, COLORS.white_translucent)
-
-        0.2, 10, rl.Color(0, 0, 0, 150)
-      )
-
-      # 綠色文字
-      rl.draw_text_ex(self._font_medium, text, rl.Vector2(pos_x, pos_y), 48, 0, rl.Color(0, 255, 0, 255))
