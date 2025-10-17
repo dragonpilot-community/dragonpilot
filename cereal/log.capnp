@@ -857,6 +857,7 @@ struct SelfdriveState {
 struct ControlsState @0x97ff69c53601abf1 {
   longitudinalPlanMonoTime @28 :UInt64;
   lateralPlanMonoTime @50 :UInt64;
+
   longControlState @30 :Car.CarControl.Actuators.LongControlState;
   upAccelCmd @4 :Float32;
   uiAccelCmd @5 :Float32;
