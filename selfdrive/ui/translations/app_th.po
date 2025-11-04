@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 00:50-0700\n"
+"POT-Creation-Date: 2025-11-04 20:25+0800\n"
 "PO-Revision-Date: 2025-10-22 16:32-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,48 +17,111 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: selfdrive/ui/layouts/settings/device.py:160
+#: selfdrive/ui/layouts/settings/device.py:172
 #, python-format
 msgid " Steering torque response calibration is complete."
-msgstr ""
+msgstr "การปรับเทียบการตอบสนองแรงบิดพวงมาลัยเสร็จสมบูรณ์"
 
-#: selfdrive/ui/layouts/settings/device.py:158
+#: selfdrive/ui/layouts/settings/device.py:170
 #, python-format
 msgid " Steering torque response calibration is {}% complete."
-msgstr ""
+msgstr "การปรับเทียบการตอบสนองแรงบิดพวงมาลัยเสร็จสมบูรณ์ {}%"
 
-#: selfdrive/ui/layouts/settings/device.py:133
+#: selfdrive/ui/layouts/settings/device.py:145
 #, python-format
 msgid " Your device is pointed {:.1f}° {} and {:.1f}° {}."
-msgstr ""
+msgstr "อุปกรณ์ของคุณชี้ไปที่ {:.1f}° {} และ {:.1f}° {}"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:180
+#, python-format
+msgid " km/h"
+msgstr " km/h"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:252
+#, python-format
+msgid " mins"
+msgstr " นาที"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:117
+msgid " mph"
+msgstr " mph"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:129
+msgid " sec"
+msgstr " วินาที"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:272
+#, python-format
+msgid " secs"
+msgstr " วินาที"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:203
+#, python-format
+msgid "### Device ###"
+msgstr "### อุปกรณ์ ###"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:100
+#, python-format
+msgid "### Lateral ###"
+msgstr "### ด้านข้าง ###"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:142
+#, python-format
+msgid "### Longitudinal ###"
+msgstr "### ตามยาว ###"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:97
+#, python-format
+msgid "### Mazda ###"
+msgstr "### มาสด้า ###"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:49
+#, python-format
+msgid "### Toyota / Lexus ###"
+msgstr "### โตโยต้า / เล็กซัส ###"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:173
+#, python-format
+msgid "### UI ###"
+msgstr "### UI ###"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:73
+#, python-format
+msgid "### VAG ###"
+msgstr "### VAG ###"
 
 #: selfdrive/ui/layouts/sidebar.py:43
 msgid "--"
-msgstr ""
+msgstr "--"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:246
+#, python-format
+msgid "0 mins = Immediately"
+msgstr "0 นาที = ทันที"
 
 #: selfdrive/ui/widgets/prime.py:47
 #, python-format
 msgid "1 year of drive storage"
-msgstr ""
+msgstr "พื้นที่เก็บข้อมูลการขับขี่ 1 ปี"
 
 #: selfdrive/ui/widgets/prime.py:47
 #, python-format
 msgid "24/7 LTE connectivity"
-msgstr ""
+msgstr "การเชื่อมต่อ LTE 24/7"
 
 #: selfdrive/ui/layouts/sidebar.py:46
 msgid "2G"
-msgstr ""
+msgstr "2G"
 
 #: selfdrive/ui/layouts/sidebar.py:47
 msgid "3G"
-msgstr ""
+msgstr "3G"
 
 #: selfdrive/ui/layouts/sidebar.py:49
 msgid "5G"
-msgstr ""
+msgstr "5G"
 
-#: selfdrive/ui/layouts/settings/developer.py:23
+#: selfdrive/ui/layouts/settings/developer.py:28
 msgid ""
 "<b>WARNING: openpilot longitudinal control is in alpha for this car and will "
 "disable Automatic Emergency Braking (AEB).</b><br><br>On this car, openpilot "
@@ -68,108 +131,192 @@ msgid ""
 "control alpha. Changing this setting will restart openpilot if the car is "
 "powered on."
 msgstr ""
+"<b>คำเตือน: การควบคุมตามยาวของ openpilot "
+"อยู่ในขั้นอัลฟ่าสำหรับรถคันนี้และจะปิดการใช้งานการเบรกฉุกเฉินอัตโนมัติ (AEB)</"
+"b><br><br>สำหรับรถคันนี้ openpilot จะใช้ ACC ในตัวของรถแทนการควบคุมตามยาวของ "
+"openpilot เป็นค่าเริ่มต้น เปิดใช้งานสิ่งนี้เพื่อสลับไปใช้การควบคุมตามยาวของ openpilot "
+"ขอแนะนำให้เปิดใช้งานโหมดทดลองเมื่อเปิดใช้งานการควบคุมตามยาวของ openpilot อัลฟ่า "
+"การเปลี่ยนการตั้งค่านี้จะรีสตาร์ท openpilot หากรถเปิดอยู่"
 
-#: selfdrive/ui/layouts/settings/device.py:148
+#: selfdrive/ui/layouts/settings/device.py:160
 #, python-format
 msgid "<br><br>Steering lag calibration is complete."
-msgstr ""
+msgstr "<br><br>การปรับเทียบความล่าช้าของพวงมาλัยเสร็จสมบูรณ์"
 
-#: selfdrive/ui/layouts/settings/device.py:146
+#: selfdrive/ui/layouts/settings/device.py:158
 #, python-format
 msgid "<br><br>Steering lag calibration is {}% complete."
-msgstr ""
+msgstr "<br><br>การปรับเทียบความล่าช้าของพวงมาลัยเสร็จสมบูรณ์ {}%"
 
 #: selfdrive/ui/layouts/settings/firehose.py:138
 #, python-format
 msgid "ACTIVE"
-msgstr ""
+msgstr "ทำงานอยู่"
 
-#: selfdrive/ui/layouts/settings/developer.py:15
+#: selfdrive/ui/layouts/settings/developer.py:20
 msgid ""
 "ADB (Android Debug Bridge) allows connecting to your device over USB or over "
 "the network. See https://docs.comma.ai/how-to/connect-to-comma for more info."
 msgstr ""
+"ADB (Android Debug Bridge) อนุญาตให้เชื่อมต่อกับอุปกรณ์ของคุณผ่าน USB หรือผ่านเครือข่าย ดู "
+"https://docs.comma.ai/how-to/connect-to-comma สำหรับข้อมูลเพิ่มเติม"
 
 #: selfdrive/ui/widgets/ssh_key.py:30
 msgid "ADD"
-msgstr ""
+msgstr "เพิ่ม"
 
 #: system/ui/widgets/network.py:139
 #, python-format
 msgid "APN Setting"
-msgstr ""
+msgstr "การตั้งค่า APN"
 
 #: selfdrive/ui/widgets/offroad_alerts.py:109
 #, python-format
 msgid "Acknowledge Excessive Actuation"
-msgstr ""
+msgstr "รับทราบการทำงานที่มากเกินไป"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:160
+#, python-format
+msgid ""
+"Adaptive Coasting Mode (ACM) reduces braking to allow smoother coasting when "
+"appropriate."
+msgstr "โหมดการขับขี่แบบปรับตัว (ACM) จะลดการเบรกเพื่อให้การขับขี่ราบรื่นขึ้นเมื่อเหมาะสม"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:166
+#, python-format
+msgid "Adaptive Experimental Mode (AEM)"
+msgstr "โหมดทดลองแบบปรับตัว (AEM)"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:167
+#, python-format
+msgid ""
+"Adaptive mode switcher between ACC and Blended based on driving context."
+msgstr "ตัวสลับโหมดแบบปรับตัวระหว่าง ACC และแบบผสมตามบริบทการขับขี่"
 
 #: system/ui/widgets/network.py:74 system/ui/widgets/network.py:95
 #, python-format
 msgid "Advanced"
-msgstr ""
+msgstr "ขั้นสูง"
 
-#: selfdrive/ui/layouts/settings/toggles.py:98
+#: selfdrive/ui/layouts/settings/toggles.py:113
 #, python-format
 msgid "Aggressive"
-msgstr ""
+msgstr "ก้าวร้าว"
 
 #: selfdrive/ui/layouts/onboarding.py:116
 #, python-format
 msgid "Agree"
-msgstr ""
+msgstr "ยอมรับ"
 
-#: selfdrive/ui/layouts/settings/toggles.py:70
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:261
+#, python-format
+msgid "All"
+msgstr "ทั้งหมด"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:208
+#, python-format
+msgid ""
+"Allow openpilot to obey right-hand traffic conventions on right driver seat."
+msgstr "อนุญาตให้ openpilot ปฏิบัติตามกฎจราจรด้านขวาบนที่นั่งคนขับด้านขวา"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:104
+msgid "Allows openpilot to always steer to keep the car in its lane."
+msgstr "อนุญาตให้ openpilot บังคับพวงมาลัยเสมอเพื่อให้รถอยู่ในเลน"
+
+#: selfdrive/ui/layouts/settings/toggles.py:73
 #, python-format
 msgid "Always-On Driver Monitoring"
-msgstr ""
+msgstr "การตรวจสอบผู้ขับขี่ตลอดเวลา"
 
-#: selfdrive/ui/layouts/settings/toggles.py:186
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:103
+msgid "Always-on Lane Keeping Assist (ALKA)"
+msgstr "ระบบช่วยรักษาช่องทางจราจรตลอดเวลา (ALKA)"
+
+#: selfdrive/ui/layouts/settings/toggles.py:207
 #, python-format
 msgid ""
 "An alpha version of openpilot longitudinal control can be tested, along with "
 "Experimental mode, on non-release branches."
 msgstr ""
+"การควบคุมตามยาวของ openpilot "
+"เวอร์ชันอัลฟ่าสามารถทดสอบได้พร้อมกับโหมดทดลองในสาขาที่ไม่ใช่รุ่นที่เผยแพร่"
+
+#: selfdrive/ui/layouts/settings/device.py:199
+#, python-format
+msgid "Are you sure you want to power off?"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการปิดเครื่อง"
 
 #: selfdrive/ui/layouts/settings/device.py:187
 #, python-format
-msgid "Are you sure you want to power off?"
-msgstr ""
-
-#: selfdrive/ui/layouts/settings/device.py:175
-#, python-format
 msgid "Are you sure you want to reboot?"
-msgstr ""
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการรีบูต"
 
-#: selfdrive/ui/layouts/settings/device.py:119
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:290
+#, python-format
+msgid "Are you sure you want to reset ALL DP SETTINGS to default?"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตการตั้งค่า DP ทั้งหมดเป็นค่าเริ่มต้น"
+
+#: selfdrive/ui/layouts/settings/device.py:131
 #, python-format
 msgid "Are you sure you want to reset calibration?"
-msgstr ""
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตการปรับเทียบ"
+
+#: selfdrive/ui/layouts/settings/device.py:273
+#, python-format
+msgid "Are you sure you want to switch?"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการสลับ"
 
 #: selfdrive/ui/layouts/settings/software.py:163
 #, python-format
 msgid "Are you sure you want to uninstall?"
-msgstr ""
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการถอนการติดตั้ง"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:237
+#, python-format
+msgid "Audible Alert"
+msgstr "การแจ้งเตือนด้วยเสียง"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:122
+msgid "Auto Lane Change after:"
+msgstr "เปลี่ยนเลนอัตโนมัติหลังจาก:"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:245
+#, python-format
+msgid "Auto Shutdown After"
+msgstr "ปิดเครื่องอัตโนมัติหลังจาก"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:90
+msgid "Avoid EPS Lockout"
+msgstr "หลีกเลี่ยงการล็อก EPS"
 
 #: system/ui/widgets/network.py:99 selfdrive/ui/layouts/onboarding.py:147
 #, python-format
 msgid "Back"
-msgstr ""
+msgstr "กลับ"
 
 #: selfdrive/ui/widgets/prime.py:38
 #, python-format
 msgid "Become a comma prime member at connect.comma.ai"
+msgstr "เป็นสมาชิก comma prime ได้ที่ connect.comma.ai"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:136
+#, python-format
+msgid ""
+"Block lane change assist when the system detects the road edge.<br>NOTE: "
+"This will show 'Car Detected in Blindspot' warning."
 msgstr ""
+"บล็อกระบบช่วยเปลี่ยนเลนเมื่อระบบตรวจพบขอบถนน<br>หมายเหตุ: จะแสดงคำเตือน "
+"'ตรวจพบรถในจุดบอด'"
 
 #: selfdrive/ui/widgets/pairing_dialog.py:130
 #, python-format
 msgid "Bookmark connect.comma.ai to your home screen to use it like an app"
-msgstr ""
+msgstr "บุ๊กมาร์ก connect.comma.ai ไปที่หน้าจอหลักของคุณเพื่อใช้งานเหมือนแอป"
 
-#: selfdrive/ui/layouts/settings/device.py:68
+#: selfdrive/ui/layouts/settings/device.py:80
 #, python-format
 msgid "CHANGE"
-msgstr ""
+msgstr "เปลี่ยน"
 
 #: selfdrive/ui/layouts/settings/software.py:50
 #: selfdrive/ui/layouts/settings/software.py:107
@@ -177,252 +324,381 @@ msgstr ""
 #: selfdrive/ui/layouts/settings/software.py:147
 #, python-format
 msgid "CHECK"
-msgstr ""
+msgstr "ตรวจสอบ"
 
 #: selfdrive/ui/widgets/exp_mode_button.py:50
 #, python-format
 msgid "CHILL MODE ON"
-msgstr ""
+msgstr "โหมด CHILL เปิดอยู่"
+
+#: selfdrive/ui/layouts/settings/device.py:273
+#, python-format
+msgid "CONFIRM"
+msgstr "ยืนยัน"
 
 #: system/ui/widgets/network.py:155 selfdrive/ui/layouts/sidebar.py:73
-#: selfdrive/ui/layouts/sidebar.py:134 selfdrive/ui/layouts/sidebar.py:136
-#: selfdrive/ui/layouts/sidebar.py:138
+#: selfdrive/ui/layouts/sidebar.py:135 selfdrive/ui/layouts/sidebar.py:137
+#: selfdrive/ui/layouts/sidebar.py:139
 #, python-format
 msgid "CONNECT"
-msgstr ""
+msgstr "เชื่อมต่อ"
 
-#: system/ui/widgets/network.py:369
+#: system/ui/widgets/network.py:377
 #, python-format
 msgid "CONNECTING..."
-msgstr ""
+msgstr "กำลังเชื่อมต่อ..."
 
-#: system/ui/widgets/confirm_dialog.py:23 system/ui/widgets/option_dialog.py:35
-#: system/ui/widgets/keyboard.py:81 system/ui/widgets/network.py:318
+#: system/ui/widgets/option_dialog.py:35 system/ui/widgets/confirm_dialog.py:23
+#: system/ui/widgets/network.py:326 system/ui/widgets/keyboard.py:81
 #, python-format
 msgid "Cancel"
-msgstr ""
+msgstr "ยกเลิก"
 
 #: system/ui/widgets/network.py:134
 #, python-format
 msgid "Cellular Metered"
-msgstr ""
+msgstr "เซลลูลาร์แบบคิดค่าบริการตามปริมาณข้อมูล"
 
-#: selfdrive/ui/layouts/settings/device.py:68
+#: selfdrive/ui/layouts/settings/device.py:80
 #, python-format
 msgid "Change Language"
-msgstr ""
+msgstr "เปลี่ยนภาษา"
 
-#: selfdrive/ui/layouts/settings/toggles.py:125
+#: selfdrive/ui/layouts/settings/toggles.py:146
 #, python-format
 msgid "Changing this setting will restart openpilot if the car is powered on."
-msgstr ""
+msgstr "การเปลี่ยนการตั้งค่านี้จะรีสตาร์ท openpilot หากรถเปิดอยู่"
 
 #: selfdrive/ui/widgets/pairing_dialog.py:129
 #, python-format
 msgid "Click \"add new device\" and scan the QR code on the right"
-msgstr ""
+msgstr "คลิก \"เพิ่มอุปกรณ์ใหม่\" และสแกนรหัส QR ทางด้านขวา"
 
 #: selfdrive/ui/widgets/offroad_alerts.py:104
 #, python-format
 msgid "Close"
-msgstr ""
+msgstr "ปิด"
 
 #: selfdrive/ui/layouts/settings/software.py:49
 #, python-format
 msgid "Current Version"
-msgstr ""
+msgstr "เวอร์ชันปัจจุบัน"
 
 #: selfdrive/ui/layouts/settings/software.py:110
 #, python-format
 msgid "DOWNLOAD"
+msgstr "ดาวน์โหลด"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:153
+#, python-format
+msgid ""
+"DTSC automatically adjusts the vehicle's predicted speed based on upcoming "
+"road curvature and grip conditions.<br>Originally from the openpilot TACO "
+"branch."
 msgstr ""
+"DTSC "
+"จะปรับความเร็วที่คาดการณ์ของยานพาหนะโดยอัตโนมัติตามความโค้งของถนนและสภาพการยึดเกาะถนนที่กำลังจะมาถึง<br>เดิมมาจากสาขา "
+"openpilot TACO"
 
 #: selfdrive/ui/layouts/onboarding.py:115
 #, python-format
 msgid "Decline"
-msgstr ""
+msgstr "ปฏิเสธ"
 
 #: selfdrive/ui/layouts/onboarding.py:148
 #, python-format
 msgid "Decline, uninstall openpilot"
-msgstr ""
+msgstr "ปฏิเสธ, ถอนการติดตั้ง openpilot"
 
-#: selfdrive/ui/layouts/settings/settings.py:67
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:265
+#, python-format
+msgid "Delay Starting Loggerd for:"
+msgstr "หน่วงเวลาการเริ่มต้น Loggerd เป็นเวลา:"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:266
+#, python-format
+msgid ""
+"Delays the startup of loggerd and its related processes when the device goes "
+"on-road.<br>This prevents the initial moments of a drive from being "
+"recorded, protecting location privacy at the start of a trip."
+msgstr ""
+"หน่วงเวลาการเริ่มต้นของ loggerd "
+"และกระบวนการที่เกี่ยวข้องเมื่ออุปกรณ์อยู่บนถนน<br>วิธีนี้จะป้องกันไม่ให้ช่วงเวลาเริ่มต้นของการขับขี่ถูกบันทึกไว้ "
+"ซึ่งจะช่วยปกป้องความเป็นส่วนตัวของตำแหน่งที่จุดเริ่มต้นของการเดินทาง"
+
+#: selfdrive/ui/layouts/settings/settings.py:69
 msgid "Developer"
-msgstr ""
+msgstr "นักพัฒนา"
 
-#: selfdrive/ui/layouts/settings/settings.py:62
+#: selfdrive/ui/layouts/settings/settings.py:64
 msgid "Device"
-msgstr ""
+msgstr "อุปกรณ์"
 
-#: selfdrive/ui/layouts/settings/toggles.py:58
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:277
+#, python-format
+msgid "Disable Comma Connect"
+msgstr "ปิดใช้งาน Comma Connect"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:278
+#, python-format
+msgid ""
+"Disable Comma connect service if you do not wish to upload / being tracked "
+"by the service."
+msgstr "ปิดใช้งานบริการ Comma connect หากคุณไม่ต้องการอัปโหลด / ถูกติดตามโดยบริการ"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:214
+#, python-format
+msgid "Disable Driver Monitoring"
+msgstr "ปิดใช้งานการตรวจสอบผู้ขับขี่"
+
+#: selfdrive/ui/layouts/settings/toggles.py:97
+#, python-format
+msgid "Disable Logging"
+msgstr "ปิดใช้งานการบันทึก"
+
+#: selfdrive/ui/layouts/settings/toggles.py:103
+#, python-format
+msgid "Disable Updates"
+msgstr "ปิดใช้งานการอัปเดต"
+
+#: selfdrive/ui/layouts/settings/toggles.py:35
+msgid "Disable logging service"
+msgstr "ปิดใช้งานบริการบันทึก"
+
+#: selfdrive/ui/layouts/settings/toggles.py:36
+msgid "Disable update service"
+msgstr "ปิดใช้งานบริการอัปเดต"
+
+#: selfdrive/ui/layouts/settings/toggles.py:61
 #, python-format
 msgid "Disengage on Accelerator Pedal"
-msgstr ""
+msgstr "ปลดการทำงานเมื่อเหยียบคันเร่ง"
+
+#: selfdrive/ui/layouts/settings/device.py:196
+#, python-format
+msgid "Disengage to Power Off"
+msgstr "ปลดการทำงานเพื่อปิดเครื่อง"
 
 #: selfdrive/ui/layouts/settings/device.py:184
 #, python-format
-msgid "Disengage to Power Off"
-msgstr ""
-
-#: selfdrive/ui/layouts/settings/device.py:172
-#, python-format
 msgid "Disengage to Reboot"
-msgstr ""
+msgstr "ปลดการทำงานเพื่อรีบูต"
 
-#: selfdrive/ui/layouts/settings/device.py:103
+#: selfdrive/ui/layouts/settings/device.py:115
 #, python-format
 msgid "Disengage to Reset Calibration"
-msgstr ""
+msgstr "ปลดการทำงานเพื่อรีเซ็ตการปรับเทียบ"
 
-#: selfdrive/ui/layouts/settings/toggles.py:32
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:195
+#, python-format
+msgid "Display Lead Stats"
+msgstr "แสดงสถิติรถคันหน้า"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:228
+#, python-format
+msgid "Display Mode"
+msgstr "โหมดการแสดงผล"
+
+#: selfdrive/ui/layouts/settings/toggles.py:33
 msgid "Display speed in km/h instead of mph."
-msgstr ""
+msgstr "แสดงความเร็วเป็น กม./ชม. แทน ไมล์/ชม."
 
-#: selfdrive/ui/layouts/settings/device.py:59
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:196
+#, python-format
+msgid ""
+"Display the statistics of lead car and/or radar tracking points.<br>Lead: "
+"Lead stats only<br>Radar: Radar tracking point stats only<br>All: Lead and "
+"Radar stats<br>NOTE: Radar option only works on certain vehicle models."
+msgstr ""
+"แสดงสถิติของรถคันหน้าและ/หรือจุดติดตามเรดาร์<br>รถคันหน้า: สถิติรถคันหน้าเท่านั้น<br>เรดาร์: "
+"สถิติจุดติดตามเรดาร์เท่านั้น<br>ทั้งหมด: สถิติรถคันหน้าและเรดาร์<br>หมายเหตุ: "
+"ตัวเลือกเรดาร์ใช้งานได้กับรถบางรุ่นเท่านั้น"
+
+#: selfdrive/ui/layouts/settings/device.py:71
 #, python-format
 msgid "Dongle ID"
-msgstr ""
+msgstr "รหัส Dongle"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:52
+msgid "Door Auto Lock/Unlock"
+msgstr "ล็อก/ปลดล็อกประตูอัตโนมัติ"
 
 #: selfdrive/ui/layouts/settings/software.py:50
 #, python-format
 msgid "Download"
-msgstr ""
+msgstr "ดาวน์โหลด"
 
-#: selfdrive/ui/layouts/settings/device.py:62
+#: selfdrive/ui/layouts/settings/device.py:74
 #, python-format
 msgid "Driver Camera"
-msgstr ""
+msgstr "กล้องคนขับ"
 
-#: selfdrive/ui/layouts/settings/toggles.py:96
+#: selfdrive/ui/layouts/settings/toggles.py:111
 #, python-format
 msgid "Driving Personality"
-msgstr ""
+msgstr "บุคลิกการขับขี่"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:152
+#, python-format
+msgid "Dynamic Turn Speed Control (DTSC)"
+msgstr "การควบคุมความเร็วในการเลี้ยวแบบไดนามิก (DTSC)"
 
 #: system/ui/widgets/network.py:123 system/ui/widgets/network.py:139
 #, python-format
 msgid "EDIT"
-msgstr ""
+msgstr "แก้ไข"
 
-#: selfdrive/ui/layouts/sidebar.py:138
+#: selfdrive/ui/layouts/sidebar.py:139
 msgid "ERROR"
-msgstr ""
+msgstr "ข้อผิดพลาด"
 
 #: selfdrive/ui/layouts/sidebar.py:45
 msgid "ETH"
-msgstr ""
+msgstr "ETH"
 
 #: selfdrive/ui/widgets/exp_mode_button.py:50
 #, python-format
 msgid "EXPERIMENTAL MODE ON"
-msgstr ""
+msgstr "โหมดทดลองเปิดอยู่"
 
-#: selfdrive/ui/layouts/settings/developer.py:166
-#: selfdrive/ui/layouts/settings/toggles.py:228
+#: selfdrive/ui/layouts/settings/developer.py:173
+#: selfdrive/ui/layouts/settings/toggles.py:249
 #, python-format
 msgid "Enable"
-msgstr ""
+msgstr "เปิดใช้งาน"
 
-#: selfdrive/ui/layouts/settings/developer.py:39
+#: selfdrive/ui/layouts/settings/developer.py:45
 #, python-format
 msgid "Enable ADB"
-msgstr ""
+msgstr "เปิดใช้งาน ADB"
 
-#: selfdrive/ui/layouts/settings/toggles.py:64
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:159
+#, python-format
+msgid "Enable Adaptive Coasting Mode (ACM)"
+msgstr "เปิดใช้งานโหมดการขับขี่แบบปรับตัว (ACM)"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:221
+#, python-format
+msgid "Enable Beep (Warning)"
+msgstr "เปิดใช้งานเสียงบี๊บ (คำเตือน)"
+
+#: selfdrive/ui/layouts/settings/toggles.py:67
 #, python-format
 msgid "Enable Lane Departure Warnings"
-msgstr ""
+msgstr "เปิดใช้งานคำเตือนการออกจากเลน"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:207
+#, python-format
+msgid "Enable Right-Hand Drive Mode"
+msgstr "เปิดใช้งานโหมดขับขวา"
 
 #: system/ui/widgets/network.py:129
 #, python-format
 msgid "Enable Roaming"
-msgstr ""
+msgstr "เปิดใช้งานโรมมิ่ง"
 
-#: selfdrive/ui/layouts/settings/developer.py:48
+#: selfdrive/ui/layouts/settings/developer.py:54
 #, python-format
 msgid "Enable SSH"
-msgstr ""
+msgstr "เปิดใช้งาน SSH"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:59
+msgid "Enable TSS1 SnG Mod"
+msgstr "เปิดใช้งาน TSS1 SnG Mod"
 
 #: system/ui/widgets/network.py:120
 #, python-format
 msgid "Enable Tethering"
-msgstr ""
+msgstr "เปิดใช้งานการปล่อยสัญญาณ"
 
-#: selfdrive/ui/layouts/settings/toggles.py:30
+#: selfdrive/ui/layouts/settings/toggles.py:31
 msgid "Enable driver monitoring even when openpilot is not engaged."
-msgstr ""
+msgstr "เปิดใช้งานการตรวจสอบผู้ขับขี่แม้ว่า openpilot จะไม่ได้ทำงานอยู่"
 
-#: selfdrive/ui/layouts/settings/toggles.py:46
+#: selfdrive/ui/layouts/settings/toggles.py:49
 #, python-format
 msgid "Enable openpilot"
-msgstr ""
+msgstr "เปิดใช้งาน openpilot"
 
-#: selfdrive/ui/layouts/settings/toggles.py:189
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:53
+msgid ""
+"Enable openpilot to auto-lock doors above 20 km/h and auto-unlock when "
+"shifting to Park."
+msgstr ""
+"เปิดใช้งาน openpilot เพื่อล็อกประตูอัตโนมัติที่ความเร็วสูงกว่า 20 กม./ชม. "
+"และปลดล็อกอัตโนมัติเมื่อเปลี่ยนเกียร์ไปที่ Park"
+
+#: selfdrive/ui/layouts/settings/toggles.py:210
 #, python-format
 msgid ""
 "Enable the openpilot longitudinal control (alpha) toggle to allow "
 "Experimental mode."
-msgstr ""
+msgstr "เปิดใช้งานการสลับการควบคุมตามยาวของ openpilot (อัลฟ่า) เพื่ออนุญาตให้ใช้โหมดทดลอง"
 
-#: system/ui/widgets/network.py:204
+#: system/ui/widgets/network.py:212
 #, python-format
 msgid "Enter APN"
-msgstr ""
+msgstr "ป้อน APN"
 
-#: system/ui/widgets/network.py:241
+#: system/ui/widgets/network.py:249
 #, python-format
 msgid "Enter SSID"
-msgstr ""
+msgstr "ป้อน SSID"
 
-#: system/ui/widgets/network.py:254
+#: system/ui/widgets/network.py:262
 #, python-format
 msgid "Enter new tethering password"
-msgstr ""
+msgstr "ป้อนรหัสผ่านการปล่อยสัญญาณใหม่"
 
-#: system/ui/widgets/network.py:237 system/ui/widgets/network.py:314
+#: system/ui/widgets/network.py:245 system/ui/widgets/network.py:322
 #, python-format
 msgid "Enter password"
-msgstr ""
+msgstr "ป้อนรหัสผ่าน"
 
 #: selfdrive/ui/widgets/ssh_key.py:89
 #, python-format
 msgid "Enter your GitHub username"
-msgstr ""
+msgstr "ป้อนชื่อผู้ใช้ GitHub ของคุณ"
 
 #: system/ui/widgets/list_view.py:123 system/ui/widgets/list_view.py:160
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "ข้อผิดพลาด"
 
-#: selfdrive/ui/layouts/settings/toggles.py:52
+#: selfdrive/ui/layouts/settings/toggles.py:55
 #, python-format
 msgid "Experimental Mode"
-msgstr ""
+msgstr "โหมดทดลอง"
 
-#: selfdrive/ui/layouts/settings/toggles.py:181
+#: selfdrive/ui/layouts/settings/toggles.py:202
 #, python-format
 msgid ""
 "Experimental mode is currently unavailable on this car since the car's stock "
 "ACC is used for longitudinal control."
-msgstr ""
+msgstr "โหมดทดลองไม่สามารถใช้งานได้ในรถคันนี้เนื่องจาก ACC ของรถใช้สำหรับการควบคุมตามยาว"
 
-#: system/ui/widgets/network.py:373
+#: system/ui/widgets/network.py:381
 #, python-format
 msgid "FORGETTING..."
-msgstr ""
+msgstr "กำลังลืม..."
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:261
+#, python-format
+msgid "File"
+msgstr "ไฟล์"
 
 #: selfdrive/ui/widgets/setup.py:44
 #, python-format
 msgid "Finish Setup"
-msgstr ""
+msgstr "สิ้นสุดการตั้งค่า"
 
-#: selfdrive/ui/layouts/settings/settings.py:66
+#: selfdrive/ui/layouts/settings/settings.py:68
 msgid "Firehose"
-msgstr ""
+msgstr "Firehose"
 
 #: selfdrive/ui/layouts/settings/firehose.py:18
 msgid "Firehose Mode"
-msgstr ""
+msgstr "โหมด Firehose"
 
 #: selfdrive/ui/layouts/settings/firehose.py:25
 msgid ""
@@ -447,486 +723,688 @@ msgid ""
 "Does it matter which software I run? Yes, only upstream openpilot (and "
 "particular forks) are able to be used for training."
 msgstr ""
+"เพื่อประสิทธิภาพสูงสุด ให้นำอุปกรณ์ของคุณเข้ามาข้างในและเชื่อมต่อกับอะแดปเตอร์ USB-C ที่ดีและ Wi-"
+"Fi ทุกสัปดาห์\n"
+"\n"
+"โหมด Firehose ยังสามารถทำงานได้ในขณะที่คุณขับรถหากเชื่อมต่อกับฮอตสปอตหรือซิมการ์ดไม่จำกัด\n"
+"\n"
+"\n"
+"คำถามที่พบบ่อย\n"
+"\n"
+"ขับอย่างไรหรือที่ไหนสำคัญหรือไม่ ไม่เลย แค่ขับตามปกติ\n"
+"\n"
+"ทุกส่วนของการขับขี่ของฉันจะถูกดึงเข้ามาในโหมด Firehose หรือไม่ ไม่ "
+"เราจะดึงส่วนย่อยของส่วนของคุณมาบางส่วน\n"
+"\n"
+"อะแดปเตอร์ USB-C ที่ดีคืออะไร ที่ชาร์จโทรศัพท์หรือแล็ปท็อปที่เร็วก็ใช้ได้\n"
+"\n"
+"ซอฟต์แวร์ที่ฉันใช้มีความสำคัญหรือไม่ ใช่ มีเพียง openpilot ต้นน้ำ (และบาง fork) "
+"เท่านั้นที่สามารถใช้สำหรับการฝึกอบรมได้"
 
-#: system/ui/widgets/network.py:318 system/ui/widgets/network.py:451
+#: selfdrive/ui/layouts/settings/device.py:65
+#, python-format
+msgid ""
+"Force openpilot to go into onroad/offroad state.<br>(e.g. for update purpose)"
+msgstr ""
+"บังคับให้ openpilot เข้าสู่สถานะ onroad/offroad<br>(เช่น เพื่อวัตถุประสงค์ในการอัปเดต)"
+
+#: system/ui/widgets/network.py:326 system/ui/widgets/network.py:459
 #, python-format
 msgid "Forget"
-msgstr ""
+msgstr "ลืม"
 
-#: system/ui/widgets/network.py:319
+#: system/ui/widgets/network.py:327
 #, python-format
 msgid "Forget Wi-Fi Network \"{}\"?"
-msgstr ""
+msgstr "ลืมเครือข่าย Wi-Fi \"{}\"?"
 
-#: selfdrive/ui/layouts/sidebar.py:71 selfdrive/ui/layouts/sidebar.py:125
+#: selfdrive/ui/layouts/sidebar.py:71 selfdrive/ui/layouts/sidebar.py:126
 msgid "GOOD"
-msgstr ""
+msgstr "ดี"
+
+#: selfdrive/ui/layouts/settings/device.py:65
+#: selfdrive/ui/layouts/settings/device.py:271
+#, python-format
+msgid "Go Offroad"
+msgstr "ไป Offroad"
+
+#: selfdrive/ui/layouts/settings/device.py:271
+#, python-format
+msgid "Go Onroad"
+msgstr "ไป Onroad"
 
 #: selfdrive/ui/widgets/pairing_dialog.py:128
 #, python-format
 msgid "Go to https://connect.comma.ai on your phone"
-msgstr ""
+msgstr "ไปที่ https://connect.comma.ai บนโทรศัพท์ของคุณ"
 
-#: selfdrive/ui/layouts/sidebar.py:129
+#: selfdrive/ui/layouts/sidebar.py:130
 msgid "HIGH"
-msgstr ""
+msgstr "สูง"
 
 #: system/ui/widgets/network.py:155
 #, python-format
 msgid "Hidden Network"
-msgstr ""
+msgstr "เครือข่ายที่ซ่อนอยู่"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:176
+#, python-format
+msgid "Hide HUD When Moves above:"
+msgstr "ซ่อน HUD เมื่อเคลื่อนที่สูงกว่า:"
 
 #: selfdrive/ui/layouts/settings/firehose.py:140
 #, python-format
 msgid "INACTIVE: connect to an unmetered network"
-msgstr ""
+msgstr "ไม่ทำงาน: เชื่อมต่อกับเครือข่ายที่ไม่คิดค่าบริการตามปริมาณข้อมูล"
 
 #: selfdrive/ui/layouts/settings/software.py:53
 #: selfdrive/ui/layouts/settings/software.py:136
 #, python-format
 msgid "INSTALL"
-msgstr ""
+msgstr "ติดตั้ง"
 
 #: system/ui/widgets/network.py:150
 #, python-format
 msgid "IP Address"
-msgstr ""
+msgstr "ที่อยู่ IP"
 
 #: selfdrive/ui/layouts/settings/software.py:53
 #, python-format
 msgid "Install Update"
-msgstr ""
+msgstr "ติดตั้งการอัปเดต"
 
-#: selfdrive/ui/layouts/settings/developer.py:56
+#: selfdrive/ui/layouts/settings/developer.py:62
 #, python-format
 msgid "Joystick Debug Mode"
-msgstr ""
+msgstr "โหมดดีบักจอยสติ๊ก"
 
 #: selfdrive/ui/widgets/ssh_key.py:29
 msgid "LOADING"
-msgstr ""
+msgstr "กำลังโหลด"
 
 #: selfdrive/ui/layouts/sidebar.py:48
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
-#: selfdrive/ui/layouts/settings/developer.py:64
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:110
+msgid "Lane Change Assist At:"
+msgstr "ระบบช่วยเปลี่ยนเลนที่:"
+
+#: selfdrive/ui/layouts/settings/developer.py:70
 #, python-format
 msgid "Longitudinal Maneuver Mode"
-msgstr ""
+msgstr "โหมดการหลบหลีกตามยาว"
 
 #: selfdrive/ui/onroad/hud_renderer.py:148
 #, python-format
 msgid "MAX"
-msgstr ""
+msgstr "สูงสุด"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:76
+msgid "MQB A0 SnG Mod"
+msgstr "MQB A0 SnG Mod"
 
 #: selfdrive/ui/widgets/setup.py:75
 #, python-format
 msgid ""
 "Maximize your training data uploads to improve openpilot's driving models."
-msgstr ""
+msgstr "เพิ่มการอัปโหลดข้อมูลการฝึกอบรมของคุณให้สูงสุดเพื่อปรับปรุงโมเดลการขับขี่ของ openpilot"
 
-#: selfdrive/ui/layouts/settings/device.py:59
-#: selfdrive/ui/layouts/settings/device.py:60
+#: selfdrive/ui/layouts/settings/device.py:71
+#: selfdrive/ui/layouts/settings/device.py:72
 #, python-format
 msgid "N/A"
-msgstr ""
+msgstr "ไม่มี"
 
-#: selfdrive/ui/layouts/sidebar.py:142
+#: selfdrive/ui/layouts/sidebar.py:143
 msgid "NO"
-msgstr ""
+msgstr "ไม่"
 
-#: selfdrive/ui/layouts/settings/settings.py:63
+#: selfdrive/ui/layouts/settings/settings.py:65
 msgid "Network"
-msgstr ""
+msgstr "เครือข่าย"
 
 #: selfdrive/ui/widgets/ssh_key.py:114
 #, python-format
 msgid "No SSH keys found"
-msgstr ""
+msgstr "ไม่พบรหัส SSH"
 
 #: selfdrive/ui/widgets/ssh_key.py:126
 #, python-format
 msgid "No SSH keys found for user '{}'"
-msgstr ""
+msgstr "ไม่พบรหัส SSH สำหรับผู้ใช้ '{}'"
 
 #: selfdrive/ui/widgets/offroad_alerts.py:320
 #, python-format
 msgid "No release notes available."
-msgstr ""
+msgstr "ไม่มีบันทึกประจำรุ่น"
 
-#: selfdrive/ui/layouts/sidebar.py:73 selfdrive/ui/layouts/sidebar.py:134
+#: selfdrive/ui/layouts/sidebar.py:73 selfdrive/ui/layouts/sidebar.py:135
 msgid "OFFLINE"
-msgstr ""
+msgstr "ออฟไลน์"
 
 #: system/ui/widgets/html_render.py:263 system/ui/widgets/confirm_dialog.py:93
-#: selfdrive/ui/layouts/sidebar.py:127
+#: selfdrive/ui/layouts/sidebar.py:128
 #, python-format
 msgid "OK"
-msgstr ""
+msgstr "ตกลง"
 
-#: selfdrive/ui/layouts/sidebar.py:72 selfdrive/ui/layouts/sidebar.py:136
-#: selfdrive/ui/layouts/sidebar.py:144
+#: selfdrive/ui/layouts/sidebar.py:72 selfdrive/ui/layouts/sidebar.py:137
+#: selfdrive/ui/layouts/sidebar.py:145
 msgid "ONLINE"
-msgstr ""
+msgstr "ออนไลน์"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:118
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:130
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:184
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:253
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:261
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:273
+#, python-format
+msgid "Off"
+msgstr "ปิด"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:123
+msgid "Off = Disable Auto Lane Change."
+msgstr "Off = ปิดใช้งานการเปลี่ยนเลนอัตโนMัติ"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:111
+msgid "Off = Disable LCA.<br>1 mph = 1.2 km/h."
+msgstr "Off = ปิดใช้งาน LCA<br>1 ไมล์/ชม. = 1.2 กม./ชม."
+
+#: selfdrive/ui/layouts/settings/device.py:65
+#, python-format
+msgid "On/Off Road"
+msgstr "เปิด/ปิดถนน"
 
 #: selfdrive/ui/widgets/setup.py:20
 #, python-format
 msgid "Open"
-msgstr ""
+msgstr "เปิด"
 
-#: selfdrive/ui/layouts/settings/device.py:48
+#: selfdrive/ui/layouts/settings/device.py:55
 #, python-format
 msgid "PAIR"
-msgstr ""
+msgstr "จับคู่"
 
-#: selfdrive/ui/layouts/sidebar.py:142
+#: selfdrive/ui/layouts/sidebar.py:143
 msgid "PANDA"
-msgstr ""
+msgstr "PANDA"
 
-#: selfdrive/ui/layouts/settings/device.py:62
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:83
+msgid "PQ Steering Patch"
+msgstr "แพตช์พวงมาลัย PQ"
+
+#: selfdrive/ui/layouts/settings/device.py:74
 #, python-format
 msgid "PREVIEW"
-msgstr ""
+msgstr "ดูตัวอย่าง"
 
 #: selfdrive/ui/widgets/prime.py:44
 #, python-format
 msgid "PRIME FEATURES:"
-msgstr ""
+msgstr "คุณสมบัติ PRIME:"
 
-#: selfdrive/ui/layouts/settings/device.py:48
+#: selfdrive/ui/layouts/settings/device.py:55
 #, python-format
 msgid "Pair Device"
-msgstr ""
+msgstr "จับคู่อุปกรณ์"
 
 #: selfdrive/ui/widgets/setup.py:19
 #, python-format
 msgid "Pair device"
-msgstr ""
+msgstr "จับคู่อุปกรณ์"
 
 #: selfdrive/ui/widgets/pairing_dialog.py:103
 #, python-format
 msgid "Pair your device to your comma account"
-msgstr ""
+msgstr "จับคู่อุปกรณ์ของคุณกับบัญชี comma ของคุณ"
 
-#: selfdrive/ui/widgets/setup.py:48 selfdrive/ui/layouts/settings/device.py:24
+#: selfdrive/ui/widgets/setup.py:48 selfdrive/ui/layouts/settings/device.py:26
 #, python-format
 msgid ""
 "Pair your device with comma connect (connect.comma.ai) and claim your comma "
 "prime offer."
 msgstr ""
+"จับคู่อุปกรณ์ของคุณกับ comma connect (connect.comma.ai) และรับข้อเสนอ comma prime "
+"ของคุณ"
 
 #: selfdrive/ui/widgets/setup.py:91
 #, python-format
 msgid "Please connect to Wi-Fi to complete initial pairing"
-msgstr ""
+msgstr "โปรดเชื่อมต่อกับ Wi-Fi เพื่อทำการจับคู่เริ่มต้นให้เสร็จสมบูรณ์"
 
-#: selfdrive/ui/layouts/settings/device.py:55
-#: selfdrive/ui/layouts/settings/device.py:187
+#: selfdrive/ui/layouts/settings/device.py:62
+#: selfdrive/ui/layouts/settings/device.py:199
 #, python-format
 msgid "Power Off"
-msgstr ""
+msgstr "ปิดเครื่อง"
 
 #: system/ui/widgets/network.py:144
 #, python-format
 msgid "Prevent large data uploads when on a metered Wi-Fi connection"
-msgstr ""
+msgstr "ป้องกันการอัปโหลดข้อมูลขนาดใหญ่เมื่อเชื่อมต่อกับ Wi-Fi แบบคิดค่าบริการตามปริมาณข้อมูล"
 
 #: system/ui/widgets/network.py:135
 #, python-format
 msgid "Prevent large data uploads when on a metered cellular connection"
-msgstr ""
+msgstr "ป้องกันการอัปโหลดข้อมูลขนาดใหญ่เมื่อเชื่อมต่อกับเซลลูลาร์แบบคิดค่าบริการตามปริมาณข้อมูล"
 
-#: selfdrive/ui/layouts/settings/device.py:25
+#: selfdrive/ui/layouts/settings/device.py:27
 msgid ""
 "Preview the driver facing camera to ensure that driver monitoring has good "
 "visibility. (vehicle must be off)"
-msgstr ""
+msgstr "ดูตัวอย่างกล้องที่หันหน้าไปทางคนขับเพื่อให้แน่ใจว่าการตรวจสอบผู้ขับขี่มีทัศนวิสัยที่ดี (ต้องปิดรถ)"
 
 #: selfdrive/ui/widgets/pairing_dialog.py:161
 #, python-format
 msgid "QR Code Error"
-msgstr ""
+msgstr "ข้อผิดพลาดรหัส QR"
 
 #: selfdrive/ui/widgets/ssh_key.py:31
 msgid "REMOVE"
-msgstr ""
+msgstr "ลบ"
 
-#: selfdrive/ui/layouts/settings/device.py:51
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:40
+#: selfdrive/ui/layouts/settings/device.py:58
 #, python-format
 msgid "RESET"
-msgstr ""
+msgstr "รีเซ็ต"
 
-#: selfdrive/ui/layouts/settings/device.py:65
+#: selfdrive/ui/layouts/settings/device.py:77
 #, python-format
 msgid "REVIEW"
-msgstr ""
+msgstr "ตรวจสอบ"
 
-#: selfdrive/ui/layouts/settings/device.py:55
-#: selfdrive/ui/layouts/settings/device.py:175
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:188
+#, python-format
+msgid "Rainbow Driving Path like Tesla"
+msgstr "เส้นทางการขับขี่สีรุ้งเหมือนเทสลา"
+
+#: selfdrive/ui/layouts/settings/device.py:62
+#: selfdrive/ui/layouts/settings/device.py:187
 #, python-format
 msgid "Reboot"
-msgstr ""
+msgstr "รีบูต"
 
 #: selfdrive/ui/onroad/alert_renderer.py:66
 #, python-format
 msgid "Reboot Device"
-msgstr ""
+msgstr "รีบูตอุปกรณ์"
 
 #: selfdrive/ui/widgets/offroad_alerts.py:112
 #, python-format
 msgid "Reboot and Update"
-msgstr ""
+msgstr "รีบูตและอัปเดต"
 
-#: selfdrive/ui/layouts/settings/toggles.py:27
+#: selfdrive/ui/layouts/settings/toggles.py:28
 msgid ""
 "Receive alerts to steer back into the lane when your vehicle drifts over a "
 "detected lane line without a turn signal activated while driving over 31 mph "
 "(50 km/h)."
 msgstr ""
+"รับการแจ้งเตือนให้บังคับพวงมาลัยกลับเข้าเลนเมื่อรถของคุณเบี่ยงออกจากเส้นเลนที่ตรวจพบโดยไม่ได้เปิดไฟเลี้ยวขณะขับรถเกิน "
+"31 ไมล์/ชม. (50 กม./ชม.)"
 
-#: selfdrive/ui/layouts/settings/toggles.py:76
+#: selfdrive/ui/layouts/settings/toggles.py:79
 #, python-format
 msgid "Record and Upload Driver Camera"
-msgstr ""
+msgstr "บันทึกและอัปโหลดกล้องคนขับ"
 
-#: selfdrive/ui/layouts/settings/toggles.py:82
+#: selfdrive/ui/layouts/settings/toggles.py:85
 #, python-format
 msgid "Record and Upload Microphone Audio"
-msgstr ""
+msgstr "บันทึกและอัปโหลดเสียงไมโครโฟน"
 
-#: selfdrive/ui/layouts/settings/toggles.py:33
+#: selfdrive/ui/layouts/settings/toggles.py:34
 msgid ""
 "Record and store microphone audio while driving. The audio will be included "
 "in the dashcam video in comma connect."
 msgstr ""
+"บันทึกและจัดเก็บเสียงไมโครโฟนขณะขับรถ เสียงจะรวมอยู่ในวิดีโอ dashcam ใน comma connect"
 
-#: selfdrive/ui/layouts/settings/device.py:67
+#: selfdrive/ui/layouts/settings/device.py:79
 #, python-format
 msgid "Regulatory"
-msgstr ""
+msgstr "กฎข้อบังคับ"
 
-#: selfdrive/ui/layouts/settings/toggles.py:98
+#: selfdrive/ui/layouts/settings/toggles.py:113
 #, python-format
 msgid "Relaxed"
-msgstr ""
+msgstr "ผ่อนคลาย"
 
 #: selfdrive/ui/widgets/prime.py:47
 #, python-format
 msgid "Remote access"
-msgstr ""
+msgstr "การเข้าถึงระยะไกล"
 
 #: selfdrive/ui/widgets/prime.py:47
 #, python-format
 msgid "Remote snapshots"
-msgstr ""
+msgstr "สแนปชอตระยะไกล"
 
 #: selfdrive/ui/widgets/ssh_key.py:123
 #, python-format
 msgid "Request timed out"
-msgstr ""
+msgstr "หมดเวลาคำขอ"
 
-#: selfdrive/ui/layouts/settings/device.py:119
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:290
+#: selfdrive/ui/layouts/settings/device.py:131
 #, python-format
 msgid "Reset"
-msgstr ""
+msgstr "รีเซ็ต"
 
-#: selfdrive/ui/layouts/settings/device.py:51
+#: selfdrive/ui/layouts/settings/device.py:58
 #, python-format
 msgid "Reset Calibration"
-msgstr ""
+msgstr "รีเซ็ตการปรับเทียบ"
 
-#: selfdrive/ui/layouts/settings/device.py:65
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:39
+#, python-format
+msgid "Reset DP Settings"
+msgstr "รีเซ็ตการตั้งค่า DP"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:41
+#, python-format
+msgid "Reset dragonpilot settings to default and restart the device."
+msgstr "รีเซ็ตการตั้งค่า dragonpilot เป็นค่าเริ่มต้นและรีสตาร์ทอุปกรณ์"
+
+#: selfdrive/ui/layouts/settings/device.py:77
 #, python-format
 msgid "Review Training Guide"
-msgstr ""
+msgstr "ตรวจสอบคู่มือการฝึกอบรม"
 
-#: selfdrive/ui/layouts/settings/device.py:27
+#: selfdrive/ui/layouts/settings/device.py:29
 msgid "Review the rules, features, and limitations of openpilot"
-msgstr ""
+msgstr "ตรวจสอบกฎ คุณสมบัติ และข้อจำกัดของ openpilot"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:135
+#, python-format
+msgid "Road Edge Detection (RED)"
+msgstr "การตรวจจับขอบถนน (RED)"
 
 #: selfdrive/ui/layouts/settings/software.py:61
+#: selfdrive/ui/layouts/settings/device.py:45
 #, python-format
 msgid "SELECT"
-msgstr ""
+msgstr "เลือก"
 
-#: selfdrive/ui/layouts/settings/developer.py:53
+#: selfdrive/ui/layouts/settings/developer.py:59
 #, python-format
 msgid "SSH Keys"
-msgstr ""
+msgstr "รหัส SSH"
 
-#: system/ui/widgets/network.py:310
+#: system/ui/widgets/network.py:318
 #, python-format
 msgid "Scanning Wi-Fi networks..."
+msgstr "กำลังสแกนเครือข่าย Wi-Fi..."
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:146
+#, python-format
+msgid ""
+"See https://github.com/eFiniLan/openpilot-ext-radar-addon for more "
+"information."
 msgstr ""
+"ดู https://github.com/eFiniLan/openpilot-ext-radar-addon สำหรับข้อมูลเพิ่มเติม"
 
 #: system/ui/widgets/option_dialog.py:36
 #, python-format
 msgid "Select"
-msgstr ""
+msgstr "เลือก"
+
+#: selfdrive/ui/layouts/settings/device.py:256
+#, python-format
+msgid "Select a Vehicle"
+msgstr "เลือกรถ"
 
 #: selfdrive/ui/layouts/settings/software.py:183
 #, python-format
 msgid "Select a branch"
-msgstr ""
+msgstr "เลือกสาขา"
 
-#: selfdrive/ui/layouts/settings/device.py:91
+#: selfdrive/ui/layouts/settings/device.py:103
 #, python-format
 msgid "Select a language"
-msgstr ""
+msgstr "เลือกภาษา"
 
-#: selfdrive/ui/layouts/settings/device.py:60
+#: selfdrive/ui/layouts/settings/device.py:72
 #, python-format
 msgid "Serial"
-msgstr ""
+msgstr "ซีเรียล"
+
+#: selfdrive/ui/layouts/settings/developer.py:91
+#, python-format
+msgid "Show"
+msgstr "แสดง"
+
+#: selfdrive/ui/layouts/settings/developer.py:91
+#, python-format
+msgid "Show Last Errors"
+msgstr "แสดงข้อผิดพลาดล่าสุด"
 
 #: selfdrive/ui/widgets/offroad_alerts.py:106
 #, python-format
 msgid "Snooze Update"
-msgstr ""
+msgstr "เลื่อนการอัปเดต"
 
-#: selfdrive/ui/layouts/settings/settings.py:65
+#: selfdrive/ui/layouts/settings/settings.py:67
 msgid "Software"
-msgstr ""
+msgstr "ซอฟต์แวร์"
 
-#: selfdrive/ui/layouts/settings/toggles.py:98
+#: selfdrive/ui/layouts/settings/toggles.py:113
 #, python-format
 msgid "Standard"
-msgstr ""
+msgstr "มาตรฐาน"
 
-#: selfdrive/ui/layouts/settings/toggles.py:22
+#: selfdrive/ui/layouts/settings/toggles.py:23
 msgid ""
 "Standard is recommended. In aggressive mode, openpilot will follow lead cars "
 "closer and be more aggressive with the gas and brake. In relaxed mode "
 "openpilot will stay further away from lead cars. On supported cars, you can "
 "cycle through these personalities with your steering wheel distance button."
 msgstr ""
+"แนะนำให้ใช้โหมดมาตรฐาน ในโหมดก้าวร้าว openpilot "
+"จะตามรถคันหน้าใกล้ขึ้นและจะใช้คันเร่งและเบรกอย่างก้าวร้าวมากขึ้น ในโหมดผ่อนคลาย openpilot "
+"จะอยู่ห่างจากรถคันหน้ามากขึ้น ในรถที่รองรับ "
+"คุณสามารถวนรอบบุคลิกเหล่านี้ได้ด้วยปุ่มระยะห่างบนพวงมาลัย"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:232
+#, python-format
+msgid ""
+"Std.: Stock behavior.<br>MAIN+: ACC MAIN on = Display ON.<br>OP+: OP enabled "
+"= Display ON.<br>MAIN-: ACC MAIN on = Display OFF<br>OP-: OP enabled = "
+"Display OFF."
+msgstr ""
+"มาตรฐาน: พฤติกรรมปกติ<br>MAIN+: ACC MAIN เปิด = จอแสดงผลเปิด<br>OP+: OP เปิดใช้งาน "
+"= จอแสดงผลเปิด<br>MAIN-: ACC MAIN เปิด = จอแสดงผลปิด<br>OP-: OP เปิดใช้งาน = "
+"จอแสดงผลปิด"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:238
+#, python-format
+msgid ""
+"Std.: Stock behaviour.<br>Warning: Only emits sound when there is a warning."
+"<br>Off: Does not emit any sound at all."
+msgstr ""
+"มาตรฐาน: พฤติกรรมปกติ<br>คำเตือน: จะส่งเสียงเมื่อมีคำเตือนเท่านั้น<br>ปิด: ไม่ส่งเสียงใดๆ เลย"
 
 #: selfdrive/ui/onroad/alert_renderer.py:59
 #: selfdrive/ui/onroad/alert_renderer.py:65
 #, python-format
 msgid "System Unresponsive"
-msgstr ""
+msgstr "ระบบไม่ตอบสนอง"
 
 #: selfdrive/ui/onroad/alert_renderer.py:58
 #, python-format
 msgid "TAKE CONTROL IMMEDIATELY"
-msgstr ""
+msgstr "ควบคุมทันที"
 
-#: selfdrive/ui/layouts/sidebar.py:71 selfdrive/ui/layouts/sidebar.py:125
-#: selfdrive/ui/layouts/sidebar.py:127 selfdrive/ui/layouts/sidebar.py:129
+#: selfdrive/ui/layouts/sidebar.py:71 selfdrive/ui/layouts/sidebar.py:126
+#: selfdrive/ui/layouts/sidebar.py:128 selfdrive/ui/layouts/sidebar.py:130
 msgid "TEMP"
-msgstr ""
+msgstr "อุณหภูมิ"
 
 #: selfdrive/ui/layouts/settings/software.py:61
 #, python-format
 msgid "Target Branch"
-msgstr ""
+msgstr "สาขาเป้าหมาย"
 
 #: system/ui/widgets/network.py:124
 #, python-format
 msgid "Tethering Password"
-msgstr ""
+msgstr "รหัสผ่านการปล่อยสัญญาณ"
 
-#: selfdrive/ui/layouts/settings/settings.py:64
-msgid "Toggles"
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:177
+#, python-format
+msgid ""
+"To prevent screen burn-in, hide Speed, MAX Speed, and Steering/DM Icons when "
+"the car moves.<br>Off = Stock Behavior<br>1 km/h = 0.6 mph"
 msgstr ""
+"เพื่อป้องกันหน้าจอเบิร์นอิน ให้ซ่อนความเร็ว, ความเร็วสูงสุด และไอคอนพวงมาลัย/DM "
+"เมื่อรถเคลื่อนที่<br>ปิด = พฤติกรรมปกติ<br>1 กม./ชม. = 0.6 ไมล์/ชม."
+
+#: selfdrive/ui/layouts/settings/settings.py:66
+msgid "Toggles"
+msgstr "สลับ"
 
 #: selfdrive/ui/layouts/settings/software.py:72
 #, python-format
 msgid "UNINSTALL"
-msgstr ""
+msgstr "ถอนการติดตั้ง"
 
-#: selfdrive/ui/layouts/home.py:155
+#: selfdrive/ui/layouts/home.py:156
 #, python-format
 msgid "UPDATE"
-msgstr ""
+msgstr "อัปเดต"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:215
+#, python-format
+msgid "USE AT YOUR OWN RISK."
+msgstr "ใช้ свой страх и риск"
 
 #: selfdrive/ui/layouts/settings/software.py:72
 #: selfdrive/ui/layouts/settings/software.py:163
 #, python-format
 msgid "Uninstall"
-msgstr ""
+msgstr "ถอนการติดตั้ง"
 
-#: selfdrive/ui/layouts/sidebar.py:117
+#: selfdrive/ui/layouts/sidebar.py:118
 msgid "Unknown"
-msgstr ""
+msgstr "ไม่ทราบ"
 
 #: selfdrive/ui/layouts/settings/software.py:48
 #, python-format
 msgid "Updates are only downloaded while the car is off."
-msgstr ""
+msgstr "การอัปเดตจะดาวน์โหลดเฉพาะเมื่อรถปิดอยู่เท่านั้น"
 
 #: selfdrive/ui/widgets/prime.py:33
 #, python-format
 msgid "Upgrade Now"
-msgstr ""
+msgstr "อัปเกรดทันที"
 
-#: selfdrive/ui/layouts/settings/toggles.py:31
+#: selfdrive/ui/layouts/settings/toggles.py:32
 msgid ""
 "Upload data from the driver facing camera and help improve the driver "
 "monitoring algorithm."
-msgstr ""
+msgstr "อัปโหลดข้อมูลจากกล้องที่หันหน้าไปทางคนขับและช่วยปรับปรุงอัลกอริธึมการตรวจสอบผู้ขับขี่"
 
-#: selfdrive/ui/layouts/settings/toggles.py:88
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:222
+#, python-format
+msgid "Use Buzzer for audiable alerts."
+msgstr "ใช้ зуммер для звуковых оповещений"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:145
+#, python-format
+msgid "Use External Radar"
+msgstr "ใช้เรดาร์ภายนอก"
+
+#: selfdrive/ui/layouts/settings/toggles.py:91
 #, python-format
 msgid "Use Metric System"
-msgstr ""
+msgstr "ใช้ระบบเมตริก"
 
-#: selfdrive/ui/layouts/settings/toggles.py:17
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:66
+msgid "Use Stock Longitudinal Control"
+msgstr "ใช้การควบคุมตามยาวของเดิม"
+
+#: selfdrive/ui/layouts/settings/toggles.py:18
 msgid ""
 "Use the openpilot system for adaptive cruise control and lane keep driver "
 "assistance. Your attention is required at all times to use this feature."
 msgstr ""
+"ใช้ระบบ openpilot สำหรับระบบควบคุมความเร็วคงที่แบบปรับได้และระบบช่วยรักษาช่องทางจราจร "
+"คุณต้องให้ความสนใจตลอดเวลาเพื่อใช้คุณสมบัตินี้"
 
-#: selfdrive/ui/layouts/sidebar.py:72 selfdrive/ui/layouts/sidebar.py:144
+#: selfdrive/ui/layouts/sidebar.py:72 selfdrive/ui/layouts/sidebar.py:145
 msgid "VEHICLE"
-msgstr ""
+msgstr "ยานพาหนะ"
 
-#: selfdrive/ui/layouts/settings/device.py:67
+#: selfdrive/ui/layouts/settings/device.py:79
 #, python-format
 msgid "VIEW"
-msgstr ""
+msgstr "ดู"
+
+#: selfdrive/ui/layouts/settings/device.py:45
+#, python-format
+msgid "Vehicle Model"
+msgstr "รุ่นรถ"
+
+#: selfdrive/ui/layouts/settings/device.py:236
+#, python-format
+msgid "Vehicle Model list is not a valid format."
+msgstr "รายการรุ่นรถไม่อยู่ในรูปแบบที่ถูกต้อง"
+
+#: selfdrive/ui/layouts/settings/device.py:230
+#, python-format
+msgid "Vehicle Model list not found."
+msgstr "ไม่พบรายการรุ่นรถ"
 
 #: selfdrive/ui/onroad/alert_renderer.py:52
 #, python-format
 msgid "Waiting to start"
-msgstr ""
+msgstr "กำลังรอที่จะเริ่ม"
 
-#: selfdrive/ui/layouts/settings/developer.py:19
+#: selfdrive/ui/layouts/settings/developer.py:24
 msgid ""
 "Warning: This grants SSH access to all public keys in your GitHub settings. "
 "Never enter a GitHub username other than your own. A comma employee will "
 "NEVER ask you to add their GitHub username."
 msgstr ""
+"คำเตือน: การดำเนินการนี้จะให้สิทธิ์การเข้าถึง SSH แก่รหัสสาธารณะทั้งหมดในการตั้งค่า GitHub "
+"ของคุณ อย่าป้อนชื่อผู้ใช้ GitHub อื่นที่ไม่ใช่ของคุณเอง พนักงาน comma จะไม่ขอให้คุณเพิ่มชื่อผู้ใช้ "
+"GitHub ของพวกเขา"
 
 #: selfdrive/ui/layouts/onboarding.py:111
 #, python-format
 msgid "Welcome to openpilot"
-msgstr ""
+msgstr "ยินดีต้อนรับสู่ openpilot"
 
-#: selfdrive/ui/layouts/settings/toggles.py:20
+#: selfdrive/ui/layouts/settings/toggles.py:21
 msgid "When enabled, pressing the accelerator pedal will disengage openpilot."
-msgstr ""
+msgstr "เมื่อเปิดใช้งาน การเหยียบคันเร่งจะปลดการทำงานของ openpilot"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:189
+#, python-format
+msgid "Why not?"
+msgstr "ทำไมไม่ล่ะ"
 
 #: selfdrive/ui/layouts/sidebar.py:44
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: system/ui/widgets/network.py:144
 #, python-format
 msgid "Wi-Fi Network Metered"
-msgstr ""
+msgstr "เครือข่าย Wi-Fi แบบคิดค่าบริการตามปริมาณข้อมูล"
 
-#: system/ui/widgets/network.py:314
+#: system/ui/widgets/network.py:322
 #, python-format
 msgid "Wrong password"
-msgstr ""
+msgstr "รหัสผ่านผิด"
 
 #: selfdrive/ui/layouts/onboarding.py:145
 #, python-format
 msgid "You must accept the Terms and Conditions in order to use openpilot."
-msgstr ""
+msgstr "คุณต้องยอมรับข้อกำหนดและเงื่อนไขเพื่อใช้งาน openpilot"
 
 #: selfdrive/ui/layouts/onboarding.py:112
 #, python-format
@@ -934,83 +1412,107 @@ msgid ""
 "You must accept the Terms and Conditions to use openpilot. Read the latest "
 "terms at https://comma.ai/terms before continuing."
 msgstr ""
+"คุณต้องยอมรับข้อกำหนดและเงื่อนไขเพื่อใช้งาน openpilot อ่านข้อกำหนดล่าสุดได้ที่ https://comma."
+"ai/terms ก่อนดำเนินการต่อ"
+
+#: selfdrive/ui/layouts/settings/device.py:46
+#: selfdrive/ui/layouts/settings/device.py:225
+#, python-format
+msgid "[AUTO DETECT]"
+msgstr "[ตรวจจับอัตโนมัติ]"
 
 #: selfdrive/ui/onroad/driver_camera_dialog.py:34
 #, python-format
 msgid "camera starting"
-msgstr ""
+msgstr "กำลังเริ่มกล้อง"
 
 #: selfdrive/ui/widgets/prime.py:63
 #, python-format
 msgid "comma prime"
+msgstr "comma prime"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:257
+#, python-format
+msgid "dashy"
+msgstr "dashy"
+
+#: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:258
+#, python-format
+msgid ""
+"dashy - dragonpilot's all-in-one system hub for you.<br><br>Visit http://"
+"<device_ip>:5088 to access.<br><br>Off - Turn off dashy completely.<br>File: "
+"File Manager only.<br>All: File Manager + Live Stream."
 msgstr ""
+"dashy - ศูนย์กลางระบบ all-in-one ของ dragonpilot สำหรับคุณ<br><br>ไปที่ http://"
+"<device_ip>:5088 เพื่อเข้าถึง<br><br>ปิด - ปิด dashy โดยสมบูรณ์<br>ไฟล์: "
+"ตัวจัดการไฟล์เท่านั้น<br>ทั้งหมด: ตัวจัดการไฟล์ + สตรีมสด"
 
 #: system/ui/widgets/network.py:142
 #, python-format
 msgid "default"
-msgstr ""
+msgstr "ค่าเริ่มต้น"
 
-#: selfdrive/ui/layouts/settings/device.py:133
+#: selfdrive/ui/layouts/settings/device.py:145
 #, python-format
 msgid "down"
-msgstr ""
+msgstr "ลง"
 
 #: selfdrive/ui/layouts/settings/software.py:106
 #, python-format
 msgid "failed to check for update"
-msgstr ""
+msgstr "ตรวจสอบการอัปเดตล้มเหลว"
 
-#: system/ui/widgets/network.py:237 system/ui/widgets/network.py:314
+#: system/ui/widgets/network.py:245 system/ui/widgets/network.py:322
 #, python-format
 msgid "for \"{}\""
-msgstr ""
+msgstr "สำหรับ \"{}\""
 
 #: selfdrive/ui/onroad/hud_renderer.py:177
 #, python-format
 msgid "km/h"
-msgstr ""
+msgstr "km/h"
 
-#: system/ui/widgets/network.py:204
+#: system/ui/widgets/network.py:212
 #, python-format
 msgid "leave blank for automatic configuration"
-msgstr ""
+msgstr "เว้นว่างไว้สำหรับการกำหนดค่าอัตโนมัติ"
 
-#: selfdrive/ui/layouts/settings/device.py:134
+#: selfdrive/ui/layouts/settings/device.py:146
 #, python-format
 msgid "left"
-msgstr ""
+msgstr "ซ้าย"
 
 #: system/ui/widgets/network.py:142
 #, python-format
 msgid "metered"
-msgstr ""
+msgstr "คิดค่าบริการตามปริมาณข้อมูล"
 
 #: selfdrive/ui/onroad/hud_renderer.py:177
 #, python-format
 msgid "mph"
-msgstr ""
+msgstr "mph"
 
 #: selfdrive/ui/layouts/settings/software.py:20
 #, python-format
 msgid "never"
-msgstr ""
+msgstr "ไม่เลย"
 
 #: selfdrive/ui/layouts/settings/software.py:31
 #, python-format
 msgid "now"
-msgstr ""
+msgstr "ตอนนี้"
 
-#: selfdrive/ui/layouts/settings/developer.py:71
+#: selfdrive/ui/layouts/settings/developer.py:77
 #, python-format
 msgid "openpilot Longitudinal Control (Alpha)"
-msgstr ""
+msgstr "การควบคุมตามยาวของ openpilot (อัลฟ่า)"
 
 #: selfdrive/ui/onroad/alert_renderer.py:51
 #, python-format
 msgid "openpilot Unavailable"
-msgstr ""
+msgstr "openpilot ไม่พร้อมใช้งาน"
 
-#: selfdrive/ui/layouts/settings/toggles.py:158
+#: selfdrive/ui/layouts/settings/toggles.py:179
 #, python-format
 msgid ""
 "openpilot defaults to driving in chill mode. Experimental mode enables alpha-"
@@ -1025,13 +1527,24 @@ msgid ""
 "some turns. The Experimental mode logo will also be shown in the top right "
 "corner."
 msgstr ""
+"openpilot จะขับในโหมด chill เป็นค่าเริ่มต้น "
+"โหมดทดลองจะเปิดใช้งานคุณสมบัติระดับอัลฟ่าที่ยังไม่พร้อมสำหรับโหมด chill "
+"คุณสมบัติทดลองมีดังต่อไปนี้:<br><h4>การควบคุมตามยาวแบบ End-to-End</"
+"h4><br>ให้โมเดลการขับขี่ควบคุมคันเร่งและเบรก openpilot จะขับเหมือนที่คิดว่ามนุษย์จะขับ "
+"รวมถึงการหยุดที่ไฟแดงและป้ายหยุด เนื่องจากโมเดลการขับขี่จะตัดสินใจความเร็วในการขับขี่ "
+"ความเร็วที่ตั้งไว้จะทำหน้าที่เป็นขีดจำกัดบนเท่านั้น นี่เป็นคุณสมบัติคุณภาพอัลฟ่า "
+"ควรคาดหวังว่าจะเกิดข้อผิดพลาด<br><h4>การแสดงภาพการขับขี่ใหม่</"
+"h4><br>การแสดงภาพการขับขี่จะเปลี่ยนไปใช้กล้องมุมกว้างที่หันหน้าไปทางถนนที่ความเร็วต่ำเพื่อแสดงการเลี้ยวบางส่วนได้ดีขึ้น "
+"โลโก้โหมดทดลองจะแสดงที่มุมขวาบนด้วย"
 
-#: selfdrive/ui/layouts/settings/device.py:165
+#: selfdrive/ui/layouts/settings/device.py:177
 #, python-format
 msgid ""
 "openpilot is continuously calibrating, resetting is rarely required. "
 "Resetting calibration will restart openpilot if the car is powered on."
 msgstr ""
+"openpilot กำลังปรับเทียบอย่างต่อเนื่อง ไม่ค่อยจำเป็นต้องรีเซ็ต การรีเซ็ตการปรับเทียบจะรีสตาร์ท "
+"openpilot หากรถเปิดอยู่"
 
 #: selfdrive/ui/layouts/settings/firehose.py:20
 msgid ""
@@ -1041,89 +1554,90 @@ msgid ""
 "openpilot's driving models. More data means bigger models, which means "
 "better Experimental Mode."
 msgstr ""
+"openpilot เรียนรู้ที่จะขับรถโดยดูมนุษย์เช่นคุณขับรถ\n"
+"\n"
+"โหมด Firehose "
+"ช่วยให้คุณสามารถเพิ่มการอัปโหลดข้อมูลการฝึกอบรมของคุณให้สูงสุดเพื่อปรับปรุงโมเดลการขับขี่ของ "
+"openpilot ข้อมูลที่มากขึ้นหมายถึงโมเดลที่ใหญ่ขึ้น ซึ่งหมายถึงโหมดทดลองที่ดีขึ้น"
 
-#: selfdrive/ui/layouts/settings/toggles.py:183
+#: selfdrive/ui/layouts/settings/toggles.py:204
 #, python-format
 msgid "openpilot longitudinal control may come in a future update."
-msgstr ""
+msgstr "การควบคุมตามยาวของ openpilot อาจมาในการอัปเดตในอนาคต"
 
-#: selfdrive/ui/layouts/settings/device.py:26
+#: selfdrive/ui/layouts/settings/device.py:28
 msgid ""
 "openpilot requires the device to be mounted within 4° left or right and "
 "within 5° up or 9° down."
 msgstr ""
+"openpilot ต้องการให้อุปกรณ์ติดตั้งอยู่ภายใน 4° ซ้ายหรือขวา และภายใน 5° ขึ้นหรือ 9° ลง"
 
-#: selfdrive/ui/layouts/settings/device.py:134
+#: selfdrive/ui/layouts/settings/device.py:146
 #, python-format
 msgid "right"
-msgstr ""
+msgstr "ขวา"
 
 #: system/ui/widgets/network.py:142
 #, python-format
 msgid "unmetered"
-msgstr ""
+msgstr "ไม่คิดค่าบริการตามปริมาณข้อมูล"
 
-#: selfdrive/ui/layouts/settings/device.py:133
+#: selfdrive/ui/layouts/settings/device.py:145
 #, python-format
 msgid "up"
-msgstr ""
+msgstr "ขึ้น"
 
 #: selfdrive/ui/layouts/settings/software.py:117
 #, python-format
 msgid "up to date, last checked never"
-msgstr ""
+msgstr "เป็นปัจจุบัน, ตรวจสอบล่าสุดเมื่อไม่เคย"
 
 #: selfdrive/ui/layouts/settings/software.py:115
 #, python-format
 msgid "up to date, last checked {}"
-msgstr ""
+msgstr "เป็นปัจจุบัน, ตรวจสอบล่าสุดเมื่อ {}"
 
 #: selfdrive/ui/layouts/settings/software.py:109
 #, python-format
 msgid "update available"
-msgstr ""
+msgstr "มีการอัปเดต"
 
-#: selfdrive/ui/layouts/home.py:169
+#: selfdrive/ui/layouts/home.py:170
 #, python-format
 msgid "{} ALERT"
 msgid_plural "{} ALERTS"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{} การแจ้งเตือน"
 
 #: selfdrive/ui/layouts/settings/software.py:40
 #, python-format
 msgid "{} day ago"
 msgid_plural "{} days ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{} วันที่แล้ว"
 
 #: selfdrive/ui/layouts/settings/software.py:37
 #, python-format
 msgid "{} hour ago"
 msgid_plural "{} hours ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{} ชั่วโมงที่แล้ว"
 
 #: selfdrive/ui/layouts/settings/software.py:34
 #, python-format
 msgid "{} minute ago"
 msgid_plural "{} minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{} นาทีที่แล้ว"
 
 #: selfdrive/ui/layouts/settings/firehose.py:111
 #, python-format
 msgid "{} segment of your driving is in the training dataset so far."
 msgid_plural "{} segments of your driving is in the training dataset so far."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{} ส่วนของการขับขี่ของคุณอยู่ในชุดข้อมูลการฝึกอบรมแล้ว"
 
 #: selfdrive/ui/widgets/prime.py:62
 #, python-format
 msgid "✓ SUBSCRIBED"
-msgstr ""
+msgstr "✓ สมัครรับข้อมูลแล้ว"
 
 #: selfdrive/ui/widgets/setup.py:22
 #, python-format
 msgid "🔥 Firehose Mode 🔥"
-msgstr ""
+msgstr "🔥 โหมด Firehose 🔥"

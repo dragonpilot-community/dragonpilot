@@ -10,6 +10,8 @@ POT_FILE = os.path.join(TRANSLATIONS_DIR, "app.pot")
 def update_translations():
   files = []
   for root, _, filenames in chain(os.walk(SYSTEM_UI_DIR),
+                                  os.walk(os.path.join(UI_DIR, "..", "..", "dragonpilot", "selfdrive", "ui", "widgets")),
+                                  os.walk(os.path.join(UI_DIR, "..", "..", "dragonpilot", "selfdrive", "ui", "layouts")),
                                   os.walk(os.path.join(UI_DIR, "widgets")),
                                   os.walk(os.path.join(UI_DIR, "layouts")),
                                   os.walk(os.path.join(UI_DIR, "onroad"))):
