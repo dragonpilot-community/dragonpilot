@@ -250,8 +250,8 @@ def below_steer_speed_alert(CP: car.CarParams, CS: car.CarState, sm: messaging.S
   return Alert(
     f"Steer Assist Unavailable Below {get_display_speed(CP.minSteerSpeed, metric)}",
     "",
-    AlertStatus.userPrompt, AlertSize.small,
-    Priority.LOW, VisualAlert.none, AudibleAlert.prompt, 0.4)
+    AlertStatus.normal, AlertSize.small,      # <--- 改為 .normal (變黑底)
+    Priority.LOW, VisualAlert.none, AudibleAlert.none, 0.4)   # <--- 改為 .none (靜音)
 
 
 def calibration_incomplete_alert(CP: car.CarParams, CS: car.CarState, sm: messaging.SubMaster, metric: bool, soft_disable_time: int, personality) -> Alert:
