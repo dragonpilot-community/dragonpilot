@@ -31,7 +31,7 @@ class CarInterface(CarInterfaceBase):
       return CarControllerParams.NIDEC_ACCEL_MIN, np.interp(current_speed, ACCEL_MAX_BP, ACCEL_MAX_VALS)
 
   @staticmethod
-  def _get_params(ret: structs.CarParams, candidate, fingerprint, car_fw, alpha_long, is_release, dp_params, docs) -> structs.CarParams:
+  def _get_params(ret: structs.CarParams, candidate, fingerprint, car_fw, alpha_long, is_release, dp_params, docs, **kwargs) -> structs.CarParams:
     ret.brand = "honda"
 
     CAN = CanBus(ret, fingerprint)
@@ -170,6 +170,15 @@ class CarInterface(CarInterfaceBase):
         ret.wheelSpeedFactor = 1.025
       else:
         ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.8], [0.24]]  # TODO: can probably use some tuning
+
+    # === 這是您剛加入的部分 ===
+    elif candidate == CAR.HONDA_FIT_EHEV_2021:
+      ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.08]]
+      ret.lateralTuning.pid.kf = 0.00005
+      ret.steerActuatorDelay = 0.0
+      ret.maxLateralAccel = 2.5
+    # ========================
 
     elif candidate == CAR.ACURA_RDX:
       ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 1000], [0, 1000]]  # TODO: determine if there is a dead zone at the top end
