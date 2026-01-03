@@ -230,6 +230,14 @@ class CAR(Platforms):
     {Bus.pt: 'honda_bosch_radarless_generated'},
     flags=HondaFlags.BOSCH_RADARLESS,
   )
+  #==========================================================================
+  HONDA_FIT_EHEV_2021 = HondaBoschPlatformConfig(
+    [HondaCarDocs("Honda Fit e:HEV 2021", "All")],
+    CarSpecs(mass=2645 * CV.LB_TO_KG, wheelbase=2.53, steerRatio=15.2, centerToFrontRatio=0.44, tireStiffnessFactor=0.5, minSteerSpeed=24. * CV.KPH_TO_MS),
+    {Bus.pt: 'honda_bosch_radarless_generated'},
+    flags=HondaFlags.BOSCH_RADARLESS,
+  )
+  #=====================================================================
   HONDA_CITY_7G = HondaBoschPlatformConfig(
     [HondaCarDocs("Honda City (Brazil only) 2023", "All")],
     CarSpecs(mass=3125 * CV.LB_TO_KG, wheelbase=2.6, steerRatio=19.0, centerToFrontRatio=0.41, minSteerSpeed=23. * CV.KPH_TO_MS),
@@ -420,9 +428,17 @@ FW_QUERY_CONFIG = FwQueryConfig(
   # Note that we still attempt to match with them when they are present
   # This is or'd with (ALL_ECUS - ESSENTIAL_ECUS) from fw_versions.py
   non_essential_ecus={
-    Ecu.eps: [CAR.ACURA_RDX_3G, CAR.HONDA_ACCORD, CAR.HONDA_E, *HONDA_BOSCH_ALT_RADAR, *HONDA_BOSCH_RADARLESS, *HONDA_BOSCH_CANFD],
-    Ecu.vsa: [CAR.ACURA_RDX_3G, CAR.HONDA_ACCORD, CAR.HONDA_CIVIC, CAR.HONDA_CIVIC_BOSCH, CAR.HONDA_CRV_5G, CAR.HONDA_CRV_HYBRID,
-              CAR.HONDA_E, CAR.HONDA_INSIGHT, CAR.HONDA_NBOX_2G, *HONDA_BOSCH_ALT_RADAR, *HONDA_BOSCH_RADARLESS, *HONDA_BOSCH_CANFD],
+    Ecu.eps: [
+      CAR.HONDA_FIT_EHEV_2021,
+      CAR.ACURA_RDX_3G, CAR.HONDA_ACCORD, CAR.HONDA_E, 
+      *HONDA_BOSCH_ALT_RADAR, *HONDA_BOSCH_RADARLESS, *HONDA_BOSCH_CANFD
+    ],
+    Ecu.vsa: [
+      CAR.HONDA_FIT_EHEV_2021,
+      CAR.ACURA_RDX_3G, CAR.HONDA_ACCORD, CAR.HONDA_CIVIC, CAR.HONDA_CIVIC_BOSCH, 
+      CAR.HONDA_CRV_5G, CAR.HONDA_CRV_HYBRID, CAR.HONDA_E, CAR.HONDA_INSIGHT, 
+      CAR.HONDA_NBOX_2G, *HONDA_BOSCH_ALT_RADAR, *HONDA_BOSCH_RADARLESS, *HONDA_BOSCH_CANFD
+    ],
   },
   extra_ecus=[
     (Ecu.combinationMeter, 0x18da60f1, None),
