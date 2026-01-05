@@ -174,6 +174,7 @@ class CarInterface(CarInterfaceBase):
     # ========================
     elif candidate == CAR.HONDA_FIT_EHEV_2021:
       ret.safetyConfigs[-1].safetyParam |= 8 # HondaSafetyFlags.RADARLESS
+      
       #ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]
       ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]
       ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.4], [0.12]] 
