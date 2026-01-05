@@ -174,15 +174,10 @@ class CarInterface(CarInterfaceBase):
     # ========================
     elif candidate == CAR.HONDA_FIT_EHEV_2021:
       #ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]
-      ret.lateralParams.torqueBP = [0, 4096]
-      ret.lateralParams.torqueV = [0, 0]  # <--- 強制為 0
-      
-      # PID 全部歸零
-      ret.lateralTuning.pid.kpV = [0.0]   # <--- 強制為 0
-      ret.lateralTuning.pid.kiV = [0.0]   # <--- 強制為 0
+      ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.4], [0.12]] 
       ret.lateralTuning.pid.kf = 0.0      # <--- 強制為 0
-      
-      ret.steerActuatorDelay = 0.1
+      ret.steerActuatorDelay = 0
       ret.maxLateralAccel = 2.5
     # ========================
 
