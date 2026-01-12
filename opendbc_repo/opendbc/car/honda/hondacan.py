@@ -168,43 +168,17 @@ def create_acc_hud(packer, bus, CP, enabled, pcm_speed, pcm_accel, hud_control, 
 def create_lkas_hud(packer, bus, CP, hud_control, lat_active, steering_available, reduced_steering, alert_steer_required, lkas_hud):
   commands = []
 
-  # --- 修正版 (解決橘燈報錯) ---
-  # 邏輯：絕對互斥。
-  # 如果 OpenPilot 在轉向 (lat_active)：顯示實線，隱藏虛線，關閉警告。
-  # 如果 OpenPilot 沒動作 (Standby)：顯示虛線，隱藏實線。
-  
-  if lat_active:
-    is_solid = 1
-    is_dashed = 0
-    is_steer_req = 0
-  else:
-    is_solid = 0
-    is_dashed = hud_control.lanesVisible
-    is_steer_req = alert_steer_required
-
   lkas_hud_values = {
     'LKAS_READY': 1,
     'LKAS_STATE_CHANGE': 1,
-    'STEERING_REQUIRED': is_steer_req,
-    'SOLID_LANES': is_solid,
+    'STEERING_REQUIRED': alert_steer_required,
+    'SOLID_LANES': hud_control.lanesVisible,
     'BEEP': 0,
   }
 
   if CP.carFingerprint in (HONDA_BOSCH_RADARLESS | HONDA_BOSCH_CANFD):
     lkas_hud_values['LANE_LINES'] = 3
-    lkas_hud_values['DASHED_LANES'] = is_dashed # 確保這裡引用上面的邏輯
-    
-    # 務必保留原廠的錯誤訊號轉發，不然也會亮橘燈
-    if CP.carFingerprint in HONDA_BOSCH_RADARLESS:
-      # --- 修改開始 ---
-      # 如果 OP 正在轉向 (lat_active)，強制送 0 (沒問題)
-      # 只有在 OP 沒動作時，才允許原車鏡頭回報錯誤
-      lkas_hud_values['LKAS_PROBLEM'] = 0 if lat_active else lkas_hud['LKAS_PROBLEM']
-      # --- 修改結束 ---
-  
-  #if CP.carFingerprint in (HONDA_BOSCH_RADARLESS | HONDA_BOSCH_CANFD):
-    #lkas_hud_values['LANE_LINES'] = 3
-    #lkas_hud_values['DASHED_LANES'] = hud_control.lanesVisible
+    lkas_hud_values['DASHED_LANES'] = hud_control.lanesVisible
 
     # car likely needs to see LKAS_PROBLEM fall within a specific time frame, so forward from camera
     # TODO: needed for Bosch CAN FD?
