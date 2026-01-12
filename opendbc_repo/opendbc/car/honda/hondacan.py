@@ -196,8 +196,11 @@ def create_lkas_hud(packer, bus, CP, hud_control, lat_active, steering_available
     
     # 務必保留原廠的錯誤訊號轉發，不然也會亮橘燈
     if CP.carFingerprint in HONDA_BOSCH_RADARLESS:
-      lkas_hud_values['LKAS_PROBLEM'] = lkas_hud['LKAS_PROBLEM']
-  # --- 修正結束 ---
+      # --- 修改開始 ---
+      # 如果 OP 正在轉向 (lat_active)，強制送 0 (沒問題)
+      # 只有在 OP 沒動作時，才允許原車鏡頭回報錯誤
+      lkas_hud_values['LKAS_PROBLEM'] = 0 if lat_active else lkas_hud['LKAS_PROBLEM']
+      # --- 修改結束 ---
   
   #if CP.carFingerprint in (HONDA_BOSCH_RADARLESS | HONDA_BOSCH_CANFD):
     #lkas_hud_values['LANE_LINES'] = 3
