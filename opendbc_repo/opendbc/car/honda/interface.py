@@ -177,7 +177,7 @@ class CarInterface(CarInterfaceBase):
       ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]
       ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.4], [0.12]] 
       ret.lateralTuning.pid.kf = 0.0     
-      ret.steerActuatorDelay = 0.5
+      ret.steerActuatorDelay = 0
       ret.maxLateralAccel = 2.5
     # ========================
 
