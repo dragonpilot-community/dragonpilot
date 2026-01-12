@@ -226,14 +226,14 @@ class CAR(Platforms):
   )
   HONDA_HRV_3G = HondaBoschPlatformConfig(
     [HondaCarDocs("Honda HR-V 2023-25", "All")],
-    CarSpecs(mass=3125 * CV.LB_TO_KG, wheelbase=2.61, steerRatio=15.2, centerToFrontRatio=0.41, tireStiffnessFactor=0.5),
+    CarSpecs(mass=2821 * CV.LB_TO_KG, wheelbase=2.53, steerRatio=12.1, centerToFrontRatio=0.41, tireStiffnessFactor=0.5),
     {Bus.pt: 'honda_bosch_radarless_generated'},
     flags=HondaFlags.BOSCH_RADARLESS,
   )
   #==========================================================================
   HONDA_FIT_EHEV_2021 = HondaBoschPlatformConfig(
     [HondaCarDocs("Honda Fit e:HEV 2021", "All")],
-    CarSpecs(mass=2645 * CV.LB_TO_KG, wheelbase=2.53, steerRatio=15.2, centerToFrontRatio=0.44, tireStiffnessFactor=0.5, minSteerSpeed=24. * CV.KPH_TO_MS),
+    CarSpecs(mass=2645 * CV.LB_TO_KG, wheelbase=2.53, steerRatio=12.1, centerToFrontRatio=0.41, tireStiffnessFactor=0.5, minSteerSpeed=24. * CV.KPH_TO_MS),
     {Bus.pt: 'honda_bosch_radarless_generated'},
     flags=HondaFlags.BOSCH_RADARLESS,
   )
