@@ -123,9 +123,21 @@ class CarController(CarControllerBase):
       gas, brake = 0.0, 0.0
 
     # *** rate limit steer ***
-    limited_torque = rate_limit(actuators.torque, self.last_torque, -self.params.STEER_DELTA_DOWN * DT_CTRL,
-                                self.params.STEER_DELTA_UP * DT_CTRL)
-    self.last_torque = limited_torque
+    # --- 修改開始：Fit 低速抗震動邏輯 ---
+    # 如果時速低於 7 m/s (約 25 km/h)
+    if CS.out.vEgo < 7.0:
+        # 將扭矩變化速度砍剩 30% (0.3)
+        # 這會讓方向盤轉得很慢，很柔，避免觸發 EPS 的震動保護
+        torque_rate_factor = 0.3 
+    else:
+        torque_rate_factor = 1.0
+
+    # 重新計算限制範圍
+    up_limit = self.params.STEER_DELTA_UP * DT_CTRL * torque_rate_factor
+    down_limit = self.params.STEER_DELTA_DOWN * DT_CTRL * torque_rate_factor
+
+    limited_torque = rate_limit(actuators.torque, self.last_torque, -down_limit, up_limit)
+    # --- 修改結束 ---
 
     # *** apply brake hysteresis ***
     pre_limit_brake, self.braking, self.brake_steady = actuator_hysteresis(brake, self.braking, self.brake_steady,
@@ -224,7 +236,10 @@ class CarController(CarControllerBase):
         can_sends.append(hondacan.create_acc_hud(self.packer, self.CAN.pt, self.CP, CC.enabled, pcm_speed, pcm_accel,
                                                  hud_control, hud_v_cruise, CS.is_metric, CS.acc_hud))
 
-      steering_available = CS.out.cruiseState.available and CS.out.vEgo > self.CP.minSteerSpeed
+      # --- 修改開始 ---
+      # 刪掉對速度的檢查，只要 ACC 開著，就隨時準備轉向
+      steering_available = CS.out.cruiseState.available
+      # --- 修改結束 ---
       reduced_steering = CS.out.steeringPressed
       can_sends.extend(hondacan.create_lkas_hud(self.packer, self.CAN.lkas, self.CP, hud_control, CC.latActive,
                                                 steering_available, reduced_steering, alert_steer_required, CS.lkas_hud))
