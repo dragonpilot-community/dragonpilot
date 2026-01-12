@@ -1,3 +1,4 @@
+
 import numpy as np
 
 from opendbc.can import CANPacker
@@ -123,22 +124,9 @@ class CarController(CarControllerBase):
       gas, brake = 0.0, 0.0
 
     # *** rate limit steer ***
-    # ... (原本的 rate limit 代碼) ...
     limited_torque = rate_limit(actuators.torque, self.last_torque, -self.params.STEER_DELTA_DOWN * DT_CTRL,
                                 self.params.STEER_DELTA_UP * DT_CTRL)
-
-    # --- 插入這段測試代碼 ---
-    # 目的：測試低速方向盤打架是否因力道過大引起
-    # 邏輯：當車速低於 24 km/h 時，強制將輸出的扭矩限制在原本的 25% (0.25)
-    
-    # 24 km/h 換算約為 6.7 m/s
-    if CS.out.vEgo < (24.0 * 0.2778): # 或者使用 CV.KPH_TO_MS
-        limited_torque = limited_torque * 0.25
-        
-    # --- 插入結束 ---
-
     self.last_torque = limited_torque
-    # ... (接續原本的代碼) ...
 
     # *** apply brake hysteresis ***
     pre_limit_brake, self.braking, self.brake_steady = actuator_hysteresis(brake, self.braking, self.brake_steady,
