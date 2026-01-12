@@ -181,11 +181,16 @@ def create_lkas_hud(packer, bus, CP, hud_control, lat_active, steering_available
     'SOLID_LANES': fake_lanes,           # 騙它車道鎖定了
     'BEEP': 0,
   }
-  # --- 修改結束 ---
 
   if CP.carFingerprint in (HONDA_BOSCH_RADARLESS | HONDA_BOSCH_CANFD):
     lkas_hud_values['LANE_LINES'] = 3
-    lkas_hud_values['DASHED_LANES'] = hud_control.lanesVisible
+    # 這裡也要改：如果是 active，就把虛線隱藏 (0)，只讓上面設定的實線顯示
+    lkas_hud_values['DASHED_LANES'] = 0 if lat_active else hud_control.lanesVisible
+  # --- 修改結束 ---
+  
+  #if CP.carFingerprint in (HONDA_BOSCH_RADARLESS | HONDA_BOSCH_CANFD):
+    #lkas_hud_values['LANE_LINES'] = 3
+    #lkas_hud_values['DASHED_LANES'] = hud_control.lanesVisible
 
     # car likely needs to see LKAS_PROBLEM fall within a specific time frame, so forward from camera
     # TODO: needed for Bosch CAN FD?
