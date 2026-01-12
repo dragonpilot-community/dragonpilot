@@ -168,25 +168,28 @@ def create_acc_hud(packer, bus, CP, enabled, pcm_speed, pcm_accel, hud_control, 
 def create_lkas_hud(packer, bus, CP, hud_control, lat_active, steering_available, reduced_steering, alert_steer_required, lkas_hud):
   commands = []
 
-  # --- 修改開始 ---
-  # 只要 OpenPilot 在運作 (lat_active=True)，就騙車子說「我看到實線了」(1)
-  # 這會讓儀表板的車道線變實心/變綠，EPS 才會願意工作
-  fake_lanes = 1 if lat_active else hud_control.lanesVisible
-  fake_steer_req = 0 if lat_active else alert_steer_required
+  # --- 修正版代碼 (解決功能消失) ---
+  # 不管有沒有在轉向，只要 ACC 系統可用 (steering_available 為 True)
+  # 我們就騙車子顯示實線 (1)，這樣 EPS 才會把大門打開
+  is_solid_lanes = 1 if steering_available else 0
+  
+  # 只有在真正轉向時，才取消手握方向盤警告
+  is_steer_req = 0 if lat_active else alert_steer_required
 
   lkas_hud_values = {
     'LKAS_READY': 1,
     'LKAS_STATE_CHANGE': 1,
-    'STEERING_REQUIRED': fake_steer_req, # 騙它不需要手握方向盤
-    'SOLID_LANES': fake_lanes,           # 騙它車道鎖定了
+    'STEERING_REQUIRED': is_steer_req,
+    'SOLID_LANES': is_solid_lanes, # 這裡改用 steering_available 判斷
     'BEEP': 0,
   }
-
+  
+  # 針對 Bosch Radarless 的部分也要同步
   if CP.carFingerprint in (HONDA_BOSCH_RADARLESS | HONDA_BOSCH_CANFD):
     lkas_hud_values['LANE_LINES'] = 3
-    # 這裡也要改：如果是 active，就把虛線隱藏 (0)，只讓上面設定的實線顯示
-    lkas_hud_values['DASHED_LANES'] = 0 if lat_active else hud_control.lanesVisible
-  # --- 修改結束 ---
+    # 這裡也要改成 steering_available，不然儀表板不會亮綠燈
+    lkas_hud_values['DASHED_LANES'] = 0 if steering_available else hud_control.lanesVisible
+  # --- 修正結束 ---
   
   #if CP.carFingerprint in (HONDA_BOSCH_RADARLESS | HONDA_BOSCH_CANFD):
     #lkas_hud_values['LANE_LINES'] = 3
