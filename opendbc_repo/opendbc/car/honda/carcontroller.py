@@ -127,14 +127,15 @@ class CarController(CarControllerBase):
     # Fit e:HEV 在低速時馬達極度敏感，我們強制把力量砍半
     if CS.out.vEgo < 10.0: # 36 km/h 以下
         limited_torque = limited_torque * 0.4 # 只給 40% 力道
+    # --- 抗震動補丁 V2 (更強力的抑制) ---
+    # 如果速度小於 10 m/s (36 km/h)
+    if CS.out.vEgo < 10.0:
+        # 上次試 0.4 還會抖，這次我們改成 0.25 (只剩四分之一的力道)
+        # 這能確保 EPS 絕對不會感覺到反抗力
+        limited_torque = limited_torque * 0.25
     # ----------------
-    # 重新計算限制範圍
-    up_limit = self.params.STEER_DELTA_UP * DT_CTRL * torque_rate_factor
-    down_limit = self.params.STEER_DELTA_DOWN * DT_CTRL * torque_rate_factor
-
-    limited_torque = rate_limit(actuators.torque, self.last_torque, -down_limit, up_limit)
-    # --- 修改結束 ---
-
+    
+    self.last_torque = limited_torque
     # *** apply brake hysteresis ***
     pre_limit_brake, self.braking, self.brake_steady = actuator_hysteresis(brake, self.braking, self.brake_steady,
                                                                            CS.out.vEgo, self.CP.carFingerprint)
