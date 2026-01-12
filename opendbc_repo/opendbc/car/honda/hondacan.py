@@ -168,13 +168,20 @@ def create_acc_hud(packer, bus, CP, enabled, pcm_speed, pcm_accel, hud_control, 
 def create_lkas_hud(packer, bus, CP, hud_control, lat_active, steering_available, reduced_steering, alert_steer_required, lkas_hud):
   commands = []
 
+  # --- 修改開始 ---
+  # 只要 OpenPilot 在運作 (lat_active=True)，就騙車子說「我看到實線了」(1)
+  # 這會讓儀表板的車道線變實心/變綠，EPS 才會願意工作
+  fake_lanes = 1 if lat_active else hud_control.lanesVisible
+  fake_steer_req = 0 if lat_active else alert_steer_required
+
   lkas_hud_values = {
     'LKAS_READY': 1,
     'LKAS_STATE_CHANGE': 1,
-    'STEERING_REQUIRED': alert_steer_required,
-    'SOLID_LANES': hud_control.lanesVisible,
+    'STEERING_REQUIRED': fake_steer_req, # 騙它不需要手握方向盤
+    'SOLID_LANES': fake_lanes,           # 騙它車道鎖定了
     'BEEP': 0,
   }
+  # --- 修改結束 ---
 
   if CP.carFingerprint in (HONDA_BOSCH_RADARLESS | HONDA_BOSCH_CANFD):
     lkas_hud_values['LANE_LINES'] = 3
