@@ -122,17 +122,11 @@ class CarController(CarControllerBase):
       accel = 0.0
       gas, brake = 0.0, 0.0
 
-    # --- 抗震動補丁 V2 (更強力的抑制) ---
-    # 如果速度小於 10 m/s (36 km/h)
-    if CS.out.vEgo < 10.0:
-        # 上次試 0.4 還會抖，這次我們改成 0.25 (只剩四分之一的力道)
-        # 這能確保 EPS 絕對不會感覺到反抗力
-        limited_torque = limited_torque * 0.25
-    # ----------------
-    
+    # *** rate limit steer ***
+    limited_torque = rate_limit(actuators.torque, self.last_torque, -self.params.STEER_DELTA_DOWN * DT_CTRL,
+                                self.params.STEER_DELTA_UP * DT_CTRL)
     self.last_torque = limited_torque
-    
-    self.last_torque = limited_torque
+
     # *** apply brake hysteresis ***
     pre_limit_brake, self.braking, self.brake_steady = actuator_hysteresis(brake, self.braking, self.brake_steady,
                                                                            CS.out.vEgo, self.CP.carFingerprint)
@@ -230,10 +224,7 @@ class CarController(CarControllerBase):
         can_sends.append(hondacan.create_acc_hud(self.packer, self.CAN.pt, self.CP, CC.enabled, pcm_speed, pcm_accel,
                                                  hud_control, hud_v_cruise, CS.is_metric, CS.acc_hud))
 
-      # --- 修改開始 ---
-      # 刪掉對速度的檢查，只要 ACC 開著，就隨時準備轉向
-      steering_available = CS.out.cruiseState.available
-      # --- 修改結束 ---
+      steering_available = CS.out.cruiseState.available and CS.out.vEgo > self.CP.minSteerSpeed
       reduced_steering = CS.out.steeringPressed
       can_sends.extend(hondacan.create_lkas_hud(self.packer, self.CAN.lkas, self.CP, hud_control, CC.latActive,
                                                 steering_available, reduced_steering, alert_steer_required, CS.lkas_hud))
