@@ -123,15 +123,11 @@ class CarController(CarControllerBase):
       gas, brake = 0.0, 0.0
 
     # *** rate limit steer ***
-    # --- 修改開始：Fit 低速抗震動邏輯 ---
-    # 如果時速低於 7 m/s (約 25 km/h)
-    if CS.out.vEgo < 7.0:
-        # 將扭矩變化速度砍剩 30% (0.3)
-        # 這會讓方向盤轉得很慢，很柔，避免觸發 EPS 的震動保護
-        torque_rate_factor = 0.3 
-    else:
-        torque_rate_factor = 1.0
-
+    # --- 抗震動補丁 ---
+    # Fit e:HEV 在低速時馬達極度敏感，我們強制把力量砍半
+    if CS.out.vEgo < 10.0: # 36 km/h 以下
+        limited_torque = limited_torque * 0.4 # 只給 40% 力道
+    # ----------------
     # 重新計算限制範圍
     up_limit = self.params.STEER_DELTA_UP * DT_CTRL * torque_rate_factor
     down_limit = self.params.STEER_DELTA_DOWN * DT_CTRL * torque_rate_factor
