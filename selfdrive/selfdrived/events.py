@@ -568,7 +568,7 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
   },
 
   EventName.belowSteerSpeed: {
-    ET.WARNING: below_steer_speed_alert,
+   # ET.WARNING: below_steer_speed_alert,
   },
 
   EventName.preLaneChangeLeft: {
