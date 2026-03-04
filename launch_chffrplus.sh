@@ -59,6 +59,13 @@ function launch {
   # Remove orphaned git lock if it exists on boot
   [ -f "$DIR/.git/index.lock" ] && rm -f $DIR/.git/index.lock
 
+  # --- [新增] 自動清除 SCons 卡死的編譯鎖 ---
+  echo "Clearing SCons stale locks to prevent boot crash..."
+  rm -f /data/scons_cache/config
+  rm -f /data/scons_cache/config.lock
+  rm -f /data/scons_cache/.sconsign.dblite.lock
+  # ------------------------------------------
+
   # Check to see if there's a valid overlay-based update available. Conditions
   # are as follows:
   #
