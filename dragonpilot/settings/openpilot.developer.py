@@ -17,7 +17,27 @@ Notes:
   also still available via the existing DeveloperLayout button.
 """
 from dragonpilot.settings import tr
-from openpilot.selfdrive.ui.layouts.settings.developer import DESCRIPTIONS as _DEV_DESC
+
+# Keep the dashy settings schema independent from the native Raylib UI. Importing
+# DeveloperLayout just for these strings initializes gui_app at module import time,
+# which blocks a headless serverd process on macOS.
+_DEV_DESC = {
+  "enable_adb": (
+    "ADB (Android Debug Bridge) allows connecting to your device over USB or over the network. "
+    "See https://docs.comma.ai/how-to/connect-to-comma for more info."
+  ),
+  "ssh_key": (
+    "Warning: This grants SSH access to all public keys in your GitHub settings. Never enter a GitHub username "
+    "other than your own. A comma employee will NEVER ask you to add their GitHub username."
+  ),
+  "alpha_longitudinal": (
+    "<b>WARNING: openpilot longitudinal control is in alpha for this car and may disable Automatic Emergency "
+    "Braking (AEB).</b><br><br>On this car, openpilot defaults to the car's built-in ACC instead of openpilot's "
+    "longitudinal control. Enable this to switch to openpilot longitudinal control. Enabling Experimental mode "
+    "is recommended when enabling openpilot longitudinal control alpha. Changing this setting will restart "
+    "openpilot if the car is powered on."
+  ),
+}
 
 _SEC = "Developer"
 _DASHY = "DASHY"

@@ -1,0 +1,59 @@
+/* Responsive overrides for the dynamically-created Dashy settings panel. */
+@media (max-width: 767px) {
+  /* Stack the category navigation above the settings content. */
+  .hud-panel-surface .flex.flex-1.min-h-0.w-full {
+    flex-direction: column;
+  }
+
+  .hud-panel-surface .flex.flex-1.min-h-0.w-full > .w-48.shrink-0 {
+    display: flex;
+    width: 100%;
+    max-height: 3.5rem;
+    flex: 0 0 auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-block: 0.25rem;
+    border-right: 0;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hud-panel-surface .flex.flex-1.min-h-0.w-full > .w-48.shrink-0::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hud-panel-surface .flex.flex-1.min-h-0.w-full > .w-48.shrink-0 > button {
+    width: auto;
+    flex: 0 0 auto;
+    padding: 0.625rem 0.875rem;
+    white-space: nowrap;
+  }
+
+  /* Let cards use the complete viewport width and prevent horizontal drift. */
+  .hud-panel-surface .flex.flex-1.min-h-0.w-full > .flex-1.overflow-y-auto.p-4 {
+    width: 100%;
+    min-width: 0;
+    padding: 0.75rem;
+    overflow-x: hidden;
+  }
+
+  .hud-panel-surface .flex.flex-1.min-h-0.w-full > .flex-1.overflow-y-auto.p-4 .card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hud-panel-surface .flex.flex-1.min-h-0.w-full > .flex-1.overflow-y-auto.p-4 .card .flex-1 {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 374px) {
+  .hud-panel-surface .flex.flex-1.min-h-0.w-full > .flex-1.overflow-y-auto.p-4 {
+    padding: 0.5rem;
+  }
+
+  .hud-panel-surface .flex.flex-1.min-h-0.w-full > .flex-1.overflow-y-auto.p-4 .p-4 {
+    padding: 0.75rem;
+  }
+}
