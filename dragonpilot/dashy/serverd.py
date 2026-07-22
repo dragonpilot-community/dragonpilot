@@ -79,8 +79,10 @@ class MockParams:
 class AppCache:
     """Centralized cache for expensive operations."""
 
-    def __init__(self):
+    def __init__(self, car_brand=None, openpilot_longitudinal_control=False):
         self._params = None
+        self._car_brand_override = car_brand
+        self._openpilot_longitudinal_control_override = openpilot_longitudinal_control
         self._car_params = None
         self._car_params_time = 0
         self._context = None
@@ -109,6 +111,12 @@ class AppCache:
 
     def _parse_car_params(self):
         """Parse CarParams from Params store."""
+        if self._car_brand_override:
+            return {
+                'brand': self._car_brand_override,
+                'openpilot_longitudinal_control': self._openpilot_longitudinal_control_override,
+            }
+
         result = {'brand': '', 'openpilot_longitudinal_control': False}
         try:
             # CarParams is cleared offroad/at boot; CarParamsPersistent keeps the last car's
@@ -790,7 +798,10 @@ async def no_cache_middleware(request, handler):
 # --- Application Setup ---
 async def on_startup(app):
     """Initialize app-level resources."""
-    app['cache'] = AppCache()
+    app['cache'] = AppCache(
+        car_brand=app['car_brand'],
+        openpilot_longitudinal_control=app['openpilot_longitudinal_control'],
+    )
     app['ws_clients'] = set()
     app['publisher_task'] = asyncio.create_task(_publisher_loop(app))
     logger.info("Dashy server started")
@@ -808,13 +819,16 @@ async def on_cleanup(app):
     logger.info("Dashy server stopped")
 
 
-def setup_aiohttp_app(host: str, port: int, debug: bool):
+def setup_aiohttp_app(host: str, port: int, debug: bool, car_brand=None,
+                      openpilot_longitudinal_control=False):
     logging.basicConfig(
         level=logging.DEBUG if debug else logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
 
     app = web.Application(middlewares=[no_cache_middleware])
+    app['car_brand'] = car_brand
+    app['openpilot_longitudinal_control'] = openpilot_longitudinal_control
 
     # API routes
     app.router.add_get("/api/init", init_api)
@@ -846,9 +860,18 @@ def main():
     parser.add_argument("--host", type=str, default="0.0.0.0", help="Host to listen on")
     parser.add_argument("--port", type=int, default=5088, help="Port to listen on")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode")
+    parser.add_argument("--car-brand", type=str, help="Override the car brand for desktop UI testing")
+    parser.add_argument("--openpilot-longitudinal-control", action="store_true",
+                        help="Expose settings that require openpilot longitudinal control")
     args = parser.parse_args()
 
-    app = setup_aiohttp_app(args.host, args.port, args.debug)
+    app = setup_aiohttp_app(
+        args.host,
+        args.port,
+        args.debug,
+        car_brand=args.car_brand,
+        openpilot_longitudinal_control=args.openpilot_longitudinal_control,
+    )
     web.run_app(app, host=args.host, port=args.port)
 
 
